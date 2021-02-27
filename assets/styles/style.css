@@ -209,6 +209,7 @@ section p {
     border: 2px solid var(--white-full);
     position: absolute;
     z-index: 1;
+    overflow: hidden;
 }
     /* create block to visually transition between image border and text block */
 #work article div::after {
@@ -222,13 +223,19 @@ section p {
     transform-origin: 0% 100%;
     z-index: -5;
 }
-
     /* img for project */
 #work article div img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     overflow: hidden;
+    transition: 0.75s ease;
+}
+    /* hover transition for images */
+#work article div img:hover {
+    transform: scale(1.1);
+    overflow: hidden;
+    filter:blur(1px) saturate(15%) brightness(1.1);  
 }
 
 /* Contact - flex for contact area children*/
@@ -294,7 +301,7 @@ footer {
     }
 
     /* Sections - reposition flex sections (not work section as it has a different break point)*/
-    section h2:not(.work-flex h2) {
+    section h2:not(#hero h2):not(.work-flex h2) {
         flex: 1;
         text-align: right;
         padding-right: 30px;
@@ -316,10 +323,9 @@ footer {
     }
 
     /* Work - reposition the h2 to align with other sections*/
-    #work h2 {
+    #work h2:not(#hero h2) {
         flex: 1;
         text-align: right;
-        padding-right: 30px;
      }
         /* p element is an empty element to assist with flex alignment */
     .work-flex p {
