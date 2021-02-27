@@ -175,7 +175,6 @@ footer {
         flex: 3;
     }
 
-
     /* Sections */
     section h2:not(#work h2):not(#hero h2) {
         flex: 1;
@@ -187,12 +186,10 @@ footer {
         flex: 3;
     }
 
-
     /* Canvas */
     .canvas {
         height: 250px;
     }
-
 
     /* Work */
     #work h2 {
@@ -212,7 +209,6 @@ footer {
         width: 35%;
     }
 
-
     /* Contact */
     #contact aside {
         flex: 3;
@@ -220,7 +216,6 @@ footer {
 
     #contact article p{
         flex: 3;
-
 }
 
 /* Desktop Size */
