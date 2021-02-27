@@ -22,7 +22,7 @@
 /* Body - background and font size*/
 body {
     background:var(--primary-color);
-    background: linear-gradient(146deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -66,16 +66,18 @@ header {
     top: 0;
     z-index: 9999;
     background:var(--primary-color);
-    background: linear-gradient(146deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-position: 0%;
     border-bottom: 2px solid var(--white-full);
+    /* CSS only method to overlay transparency over background image https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image */
+    box-shadow: inset 0 0 0 1000px var(--white-fade-soft); 
 }
     /* full width of containing element */
 header section {
-    width: 100%
+    width: 100%;
 }
 
 /* Nav - section within the header*/
@@ -189,21 +191,38 @@ section p {
     position: absolute;
     display: flex;
     bottom: 15px;
-    width: 60%;
-    height: 15px;
+    width: 50%;
+    height: 35px;
     transform: translateX(-15px);
-    color: red;
-    background-color: lightpink;
+    color: var(--text-color);
+    background-color: var(--white-full);
     align-items: center;
     justify-content: left;
     padding: 15px;
+    z-index: 2;
+    box-shadow: 3px 2px 4px 1px rgba(0, 0, 0, 0.2);
 }
     /* container to hold project img */
 #work article div {
     height: 100%;
     width: 100%;
     border: 2px solid var(--white-full);
+    position: absolute;
+    z-index: 1;
 }
+    /* create block to visually transition between image border and text block */
+#work article div::after {
+    content: "";
+    display: block;
+    position:absolute;
+    width: 21px;
+    height: 15px;
+    background-color: lightgray;
+    transform: translateX(-17px) translateY(-33px) rotate(45deg);
+    transform-origin: 0% 100%;
+    z-index: -5;
+}
+
     /* img for project */
 #work article div img {
     height: 100%;
@@ -423,5 +442,4 @@ footer {
         width: 20%;
         margin: 8px;
     }
-
 }
