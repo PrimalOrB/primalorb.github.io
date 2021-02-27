@@ -48,6 +48,7 @@ section {
 section h2 {
     width: 100%;
     padding-left: 5px;
+    text-align: center;
 }
 
 /* hero */
@@ -116,6 +117,26 @@ section h2 {
     overflow: hidden;
 }
 
+/* Contact */
+#contact article {
+    width: 40%;
+    display: flex;
+    margin: 15px;
+}
 
+#contact article div{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#contact article p{
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+    align-items: center;
+}
 
