@@ -118,6 +118,12 @@ section h2 {
 }
 
 /* Contact */
+#contact div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #contact article {
     width: 40%;
     display: flex;
@@ -146,3 +152,59 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+
+/* Tablet Size */
+@media screen and (min-width: 768px) {
+    body{
+        background-color: blue;
+    }
+
+    header section {
+        flex: 1;
+        justify-content: left;
+    }
+
+    header nav {
+        flex:2
+    }
+
+    section h2:not(#work h2):not(#hero h2) {
+        flex: 1;
+        height: 100%;
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    section p {
+        flex: 3;
+        padding-left: 15px;
+    }
+
+
+    /* Work */
+    #work h2 {
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    #work article {
+        height: 200px;
+    }
+    
+    #work article:first-of-type {
+        height: 400px;
+    }
+
+    #work article h3 {
+        width: 35%;
+    }
+
+
+    /* Contact */
+    #contact div {
+        flex: 3;
+    }
+
+}
+
