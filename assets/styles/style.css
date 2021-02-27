@@ -1,16 +1,17 @@
-/* Root */
+/* Root - adding color variables */ 
 :root {
     --primary-color: rgba(168,201,230,1);
     --secondary-color: rgba(84,64,64,1);
     --white-full: rgba(255, 255, 255, 1);
     --white-fade-hard: rgba(255, 255, 255, 0.75);
     --white-fade-soft: rgba(255, 255, 255, 0.25);
+    --gray-fade-hard: rgba(180, 180, 180, 0.75);
     --text-color: hsl(208, 38%, 25%, 1);
     --text-color-fade: hsl(208, 38%, 35%, .6);
 }
 
 
-/* All */
+/* All  - initial settings for all page elements*/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -19,62 +20,83 @@
     color: var(--text-color)
 }
 
-/* Body */
+/* Body - background and font size*/
 body {
     background:var(--primary-color);
-    background: linear-gradient(146deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 50%;
     font-size: 1.25rem;
 }
 
+/* Container - containing element of the body to fade over background, more prevalent in wider desktop displays */
 .container {
     background-color: var(--white-fade-soft);
     box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Headings */
+/* Headings - uppercase transformation of headings*/
 h1, h2, h3 {
     text-transform: uppercase;
 }
-
+    /* add shadow to title H1  */
+h1 {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+}
+    /* Add margin to bottom of section h2s to give vertical space between the sections */
 section h2 {
     margin-bottom: 0.5rem;
 }
-
-/* Add lines between sections using ::before pseudo selector */
+    /* Add lines between sections using ::before pseudo selector */
 #work::before, #contact::before, #resume::before{
     content: "";
     display: inline-block;
     width: 95%;
-    border-top: 1px solid var(--white-fade-hard)
+    border-top: 2px solid var(--white-fade-hard)
 }
 
-/* Header */
+/* Header  - flex layout, sticky, and shared background with the body*/
 header {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background:var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 0%;
+    border-bottom: 2px solid var(--white-full);
+    /* CSS only method to overlay transparency over background image https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image */
+    box-shadow: inset 0 0 0 1000px var(--white-fade-soft); 
 }
-
+    /* full width of containing element */
 header section {
-    width: 100%
+    width: 100%;
 }
 
-/* Nav */
+/* Nav - section within the header*/
 header section {
     padding-bottom: 0;
     margin-top: 1em;
 }
-
+    /* full width of containing element */
 header nav {
     width: 100%
 }
-
+    /* flex list to distribute li elements */
 header nav ul {
     display: flex;
     justify-content: space-around;
     margin-bottom: 0.5rem;
 }
-
+    /* styling of nav li elements */
 header nav ul li {
     flex: auto;
     list-style: none;
@@ -84,22 +106,23 @@ header nav ul li {
     border: 1px solid var(--white-full);
     border-radius: 10px;
     background-color: var(--white-fade-soft);
+    font-weight: bold;
 }
 
-/* Sections */
+/* Sections - general rules to apply to sections */
 section {
     margin: 15px 0;
-    padding-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
-section h2 {
+    /* section titles (except for hero) */
+section h2:not(#hero h2) {
     width: 100%;
     text-align: center;
+    padding-top: 0.5em;
 }
-
+    /* section paragraphs */
 section p {
     flex: 1;
     display: flex;
@@ -108,14 +131,14 @@ section p {
     align-items: center;
 }
 
-/* Hero */
+/* Hero - element containing threejs canvas*/
 #hero {
     width: 100%;
     margin: 0;
     padding: 0;
     position: relative;
 }
-
+    /* text overlay of canvas element */
 #hero h2 {
     position: absolute;
     display: flex;
@@ -132,78 +155,110 @@ section p {
     background: linear-gradient(270deg, var(--white-fade-hard) 0%, var(--white-fade-soft) 100%);
 }
 
+    /* container for threejs element */
 .canvas {
     width: 100%;
     height: 150px;
-    border-top: 2px solid var(--white-full);
     border-bottom: 2px solid var(--white-full);
 }
 
-/* About */
+/* About - no specific rules needed*/
 
-/* Work */
+/* Work - flex initial layout for mobile is wide, with more height for the first project*/
 .work-flex {
     display: flex;
+    width: 100%;
 }
-
+    /* container element for the project articles */
 #work .group {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+    /* each project article */
 #work article {
     width: 90%;
     height: 125px;
     position: relative;
     margin: 10px 0;
+    border: 2px solid var(--white-full);
+    overflow: hidden;
 }
-
+    /* override for first project size */
 #work article:first-of-type {
     height: 250px;
 }
-
+    /* project title overlay h3 */
 #work article h3 {
     position: absolute;
     display: flex;
     bottom: 15px;
-    width: 60%;
-    height: 15px;
-    transform: translateX(-15px);
-    color: red;
-    background-color: lightpink;
+    width: 50%;
+    height: 35px;
+    transform: translateX(15px);
+    border-radius: 0 10px 10px 0;
+    border: 1px solid var(--white-full);
+    color: var(--text-color);
+    background-color: var(--white-fade-hard);
     align-items: center;
     justify-content: left;
     padding: 15px;
+    z-index: 99;
+    box-shadow: 3px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.75s ease;
 }
-
-#work article div {
+    /* create block to visually transition between image border and text block */
+#work article h3::after {
+    content: "";
+    display: block;
+    position:absolute;
+    width: 35px;
+    height: 34px;
+    border: 1px solid var(--white-fade-hard);
+    background-color: var(--gray-fade-hard);
+    transform: translateY(50%) translateX(calc(-100% - 15px)) skewY(-45deg);
+    z-index: -30;
+}
+    /* hover effect for the overlaid title */
+#work article:hover h3 {
+    background-color: var(--white-full);
+    width: 65%
+}
+    /* container to hold project image itself */
+#work article .image-container {
     height: 100%;
     width: 100%;
 }
-
-#work article div img {
+    /* img for project */
+#work article .image-container img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     overflow: hidden;
+    transition: 0.75s ease;
+}
+    /* Hover effects for the image */
+#work article .image-container:hover img {
+    transform: scale(1.1);
+    filter: blur(2px) saturate(.15) brightness(1.1);
 }
 
-/* Contact */
+
+/* Contact - flex for contact area children*/
 #contact aside {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+    /* each contact elemennt */
 #contact article {
     width: 40%;
     display: flex;
     margin: 15px;
 }
-
+    /* container to hold contact element img */
 #contact article div{
     width: 40px;
     height: 40px;
@@ -212,15 +267,7 @@ section p {
     align-items: center;
 }
 
-/* #contact article p{
-    flex: 1;
-    display: flex;
-    justify-content: left;
-    padding-left: 10px;
-    align-items: center;
-} */
-
-/* Footer */
+/* Footer - footer element*/
 footer {
     display:flex;
     justify-content: center;
@@ -228,83 +275,78 @@ footer {
 }
 
 
-/* Tablet Size */
+/* Tablet Size Media Query*/
 @media screen and (min-width: 768px) {
-    /* Body */
+    /* Body - reduce font size slightly*/
     body {
         font-size: 1.15rem;
     }
-
+        /* remove bottom margin from h2 (not the work area, as it has a different break point) */
     h2:not(.work-flex h2) {
         margin-bottom: 0;
     }
-
-    /* Remove lines between sections using ::before pseudo selector */
+        /* Remove lines between sections using ::before pseudo selector */
     #contact::before, #resume::before{
         content: none;
     }
 
-    /* Header and Nav */
+    /* Header and Nav - reposition header section as side by side */
     header section {
         flex: 2;
         justify-content: left;
         padding-left: 1em;
     }
-
     header nav {
         flex: 3;
         display: flex;
         align-items: center;
         margin-right: 15px;
     }
-
     header nav ul {
         width: 100%;
         margin-bottom: 0;
     }
 
+    /* Sections - reposition flex sections (not work section as it has a different break point)*/
+    section h2:not(#hero h2):not(.work-flex h2) {
+        flex: 1;
+        text-align: right;
+        padding-right: 30px;
+        border-right: 5px solid var(--white-fade-hard);
+    }
+    section p {
+        flex: 3;
+    }
+
+    /* Hero - reposition the floating text element */
     #hero h2 {
         bottom: 30px;
         font-size: 2.3rem;
         padding-right: 50px;
     }
-
-    /* Sections */
-    section h2:not(.work-flex h2) {
-        flex: 1;
-        text-align: right;
-        padding-right: 30px;
-        border-right: 5px solid var(--white-full);
-    }
-
-    section p {
-        flex: 3;
-    }
-
-    /* Canvas */
+        /* increase canvas height */
     .canvas {
         height: 250px;
     }
 
-    /* Work */
-    #work h2 {
+    /* Work - reposition the h2 to align with other sections*/
+    #work h2:not(#hero h2) {
         flex: 1;
         text-align: right;
-        padding-right: 30px;
-    }
-    
-    #work .work-flex p {
+     }
+        /* p element is an empty element to assist with flex alignment */
+    .work-flex p {
         flex: 3;
      }
-
+        /* resize project elements */
     #work article {
         height: 200px;
     }
-    
+        /* resize first project element */
     #work article:first-of-type {
         height: 400px;
     }
-
+        /* reposition project text overlay */
     #work article h3 {
         width: 35%;
     }
@@ -314,52 +356,63 @@ footer {
         flex: 3;
         padding: 0 15px;
     }
-
+        /* reposition contact elements */
     #contact article p{
         flex: 3;
 }
 
-/* Desktop Size */
+/* Desktop Size Media Query */
 @media screen and (min-width: 980px) {
-    /* Body */
+    /* Body - make body a flex to center the container */
     body {
         display: flex;
         justify-content: center;
         font-size: 1rem;
     }
+        /* larger title and position change */
+    h1 {
+        font-size: 2.5rem;
+        padding-left: 50px;
+    }
+        /* larger h2 */
+    h2 {
+        font-size: 2rem;
+    }
 
-    /* Container */
+    /* Container - main page container moved to centre of page when it is larger than max-width*/
     .container {
         max-width: 1200px;
         border-left: 5px solid var(--white-full);
         border-right: 5px solid var(--white-full);
     }
 
-    /* Header and nav */
+    /* Header and nav - reposition slightly */
     header section {
-        flex: 3;
+        flex: 4;
         justify-content: left;
     }
-
     header nav {
-        flex: 2;
+        flex: 3;
+    }
+    header nav ul li {
+        font-size: 1.2rem;
     }
 
-    /* Canvas */
+    /* Canvas - change canvas size*/
     .canvas {
         height: 350px;
     }
 
-    /* Work */
+    /* Work  - bring work into same style as other sections*/
     .work-flex {
         border: 0;
         flex: 1;
         padding-top: 0;
         display: block;
         padding-right: 30px;
-        border-right: 5px solid var(--white-full);
+        border-right: 5px solid var(--white-fade-hard);
     }
-  
+        /* fix h2 */
     #work h2 {
         flex: none;
         text-align: right;
@@ -367,41 +420,39 @@ footer {
         margin: 0;
         height: 100%
     }
-
-    /* Remove lines between sections using ::before pseudo selector */
+        /* Remove lines between sections using ::before pseudo selector */
     #work::before{
         content: none;
     }
-
+        /* fix placeholder p tag */
     #work p {
         flex: none;
         padding: 0;
         width: 0
     }
-
+        /* match flex of other sections */
     #work .group {
         flex: 3;
         padding: 0 15px;
     }
-
+        /* enable side-by side appropriate flex sizes */
     #work article {
         width: 45%;
         height: 300px;
     }
-    
+        /* resize first element */
     #work article:first-of-type {
         width: 95%;
         height: 450px;
     }
 
-    /* Contact */
+    /* Contact - change layout to size by side articles */
     #contact aside {
         justify-content: space-evenly;
     }
-
+        /* change size of articles */
     #contact article {
         width: 20%;
         margin: 8px;
     }
-
 }
