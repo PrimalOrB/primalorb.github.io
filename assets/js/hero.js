@@ -24,28 +24,12 @@ var renderer = new THREE.WebGLRenderer({
 renderer.setSize( windowWidth, windowHeight );
 container.appendChild( renderer.domElement );
 
-// Lights
-const ambient = new THREE.HemisphereLight(0xffffbb, 0x080820);
-scene.add(ambient)
-
-// Grid helper
-const size = windowWidth / scale;
-const divisions = 10;
-var gridHelper = new THREE.GridHelper( size, divisions );
-//add grid
-// scene.add( gridHelper )
-    
-// Orbit Controls
-const controls = new THREE.OrbitControls( camera, renderer.domElement );
-controls.enabled = true;
-
 //Window Listeners
 window.addEventListener( 'resize', resize, false);
 window.requestAnimationFrame(render);
 
 //Material
 const material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } );
-const material2 = new THREE.LineBasicMaterial( { color: 0xffffff, linewidth: 1, linecap: 'round' } );
 
 //Geometry
 const geometry = new THREE.TorusKnotGeometry( 10, 5, 150, 15 );
@@ -72,6 +56,7 @@ function render() {
     renderer.render( scene, camera )
 }
 
+//Function for when window is resized
 function resize(){
     windowWidth = container.clientWidth;
     windowHeight = container.clientHeight
