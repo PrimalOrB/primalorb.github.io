@@ -37,9 +37,24 @@ header nav ul li {
     margin: 5px 5px;    
 }
 
+/* sections */
+section {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section h2 {
+    width: 100%;
+    padding-left: 5px;
+}
+
 /* hero */
 #hero {
     width: 100%;
+    margin: 0;
+    padding: 0;
     position: relative;
     background-color: lightgreen;
 }
@@ -55,8 +70,52 @@ header nav ul li {
     justify-content: flex-end;
     padding: 25px;
 }
+
 .canvas {
+    width: 100%;
     height: 150px;
 }
+
+/* About */
+
+/* Work */
+#work article {
+    width: 90%;
+    height: 125px;
+    position: relative;
+    margin: 10px 0;
+}
+
+#work article:first-of-type {
+    height: 250px;
+}
+
+#work article h3 {
+    position: absolute;
+    display: flex;
+    bottom: 15px;
+    width: 60%;
+    height: 15px;
+    transform: translateX(-15px);
+    color: red;
+    background-color: lightpink;
+    align-items: center;
+    justify-content: left;
+    padding: 15px;
+}
+
+#work article div {
+    height: 100%;
+    width: 100%;
+}
+
+#work article div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+
 
 
