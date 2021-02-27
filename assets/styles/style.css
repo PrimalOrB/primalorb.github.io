@@ -23,6 +23,10 @@
 body {
     background:var(--primary-color);
     background: linear-gradient(146deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 50%;
     font-size: 1.25rem;
 }
 
@@ -36,6 +40,10 @@ h1, h2, h3 {
     text-transform: uppercase;
 }
 
+h1 {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+}
+
 section h2 {
     margin-bottom: 0.5rem;
 }
@@ -45,7 +53,7 @@ section h2 {
     content: "";
     display: inline-block;
     width: 95%;
-    border-top: 1px solid var(--white-fade-hard)
+    border-top: 2px solid var(--white-fade-hard)
 }
 
 /* Header */
@@ -53,6 +61,17 @@ header {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background:var(--primary-color);
+    background: linear-gradient(146deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 0%;
+    border-bottom: 2px solid var(--white-full);
 }
 
 header section {
@@ -84,6 +103,7 @@ header nav ul li {
     border: 1px solid var(--white-full);
     border-radius: 10px;
     background-color: var(--white-fade-soft);
+    font-weight: bold;
 }
 
 /* Sections */
@@ -95,9 +115,10 @@ section {
     justify-content: center;
 }
 
-section h2 {
+section h2:not(#hero h2) {
     width: 100%;
     text-align: center;
+    padding-top: 0.5em;
 }
 
 section p {
@@ -135,7 +156,6 @@ section p {
 .canvas {
     width: 100%;
     height: 150px;
-    border-top: 2px solid var(--white-full);
     border-bottom: 2px solid var(--white-full);
 }
 
@@ -144,6 +164,7 @@ section p {
 /* Work */
 .work-flex {
     display: flex;
+    width: 100%;
 }
 
 #work .group {
@@ -181,6 +202,7 @@ section p {
 #work article div {
     height: 100%;
     width: 100%;
+    border: 2px solid var(--white-full);
 }
 
 #work article div img {
@@ -274,7 +296,7 @@ footer {
         flex: 1;
         text-align: right;
         padding-right: 30px;
-        border-right: 5px solid var(--white-full);
+        border-right: 5px solid var(--white-fade-hard);
     }
 
     section p {
@@ -293,7 +315,7 @@ footer {
         padding-right: 30px;
     }
     
-    #work .work-flex p {
+    .work-flex p {
         flex: 3;
      }
 
@@ -328,6 +350,15 @@ footer {
         font-size: 1rem;
     }
 
+    h1 {
+        font-size: 2.5rem;
+        padding-left: 50px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
     /* Container */
     .container {
         max-width: 1200px;
@@ -337,12 +368,16 @@ footer {
 
     /* Header and nav */
     header section {
-        flex: 3;
+        flex: 4;
         justify-content: left;
     }
 
     header nav {
-        flex: 2;
+        flex: 3;
+    }
+
+    header nav ul li {
+        font-size: 1.2rem;
     }
 
     /* Canvas */
@@ -357,7 +392,7 @@ footer {
         padding-top: 0;
         display: block;
         padding-right: 30px;
-        border-right: 5px solid var(--white-full);
+        border-right: 5px solid var(--white-fade-hard);
     }
   
     #work h2 {
