@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0.5px solid black;
+}
+
+.container {
+    background-color: lightgray;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+header section {
+    width: 100%
+}
+
+header nav {
+    width: 100%
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    flex: auto;
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px 5px;    
+}
+
+/* hero */
+#hero {
+    width: 100%;
+    position: relative;
+    background-color: lightgreen;
+}
+
+#hero h2 {
+    position: absolute;
+    display: flex;
+    top: 80px;
+    width: 100%;
+    height: 50px;
+    color: blue;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 25px;
+}
+.canvas {
+    height: 150px;
+}
+
+
