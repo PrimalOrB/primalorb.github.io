@@ -63,7 +63,7 @@ section h2 {
 #hero h2 {
     position: absolute;
     display: flex;
-    top: 80px;
+    bottom: 20px;
     width: 100%;
     height: 50px;
     color: blue;
@@ -80,6 +80,13 @@ section h2 {
 /* About */
 
 /* Work */
+#work .group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 #work article {
     width: 90%;
     height: 125px;
@@ -118,10 +125,11 @@ section h2 {
 }
 
 /* Contact */
-#contact div {
+#contact aside {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 #contact article {
@@ -156,29 +164,33 @@ footer {
 
 /* Tablet Size */
 @media screen and (min-width: 768px) {
-    body{
-        background-color: blue;
-    }
 
+    /* Header and nav */
     header section {
-        flex: 1;
+        flex: 2;
         justify-content: left;
     }
 
     header nav {
-        flex:2
+        flex: 3;
     }
 
+
+    /* Sections */
     section h2:not(#work h2):not(#hero h2) {
         flex: 1;
-        height: 100%;
         text-align: left;
         padding-left: 30px;
     }
 
     section p {
         flex: 3;
-        padding-left: 15px;
+    }
+
+
+    /* Canvas */
+    .canvas {
+        height: 250px;
     }
 
 
@@ -202,9 +214,76 @@ footer {
 
 
     /* Contact */
-    #contact div {
+    #contact aside {
         flex: 3;
     }
 
+    #contact article p{
+        flex: 3;
+
 }
 
+/* Desktop Size */
+@media screen and (min-width: 980px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    /* Header and nav */
+    header section {
+        flex: 3;
+        justify-content: left;
+    }
+
+    header nav {
+        flex: 2;
+    }
+
+    /* Canvas */
+    .canvas {
+        height: 350px;
+    }
+
+    #work h2 {
+        flex: 1;
+        text-align: right;
+        padding-left: 0;
+        padding-right: 30px;
+    }
+
+    section h2:not(#work h2):not(#hero h2) {
+        text-align: right;
+        padding-left: 0;
+        padding-right: 30px;
+    }
+
+    #work .group {
+        flex: 3;
+    }
+
+    #work article {
+        width: 45%;
+        height: 300px;
+    }
+    
+    #work article:first-of-type {
+        width: 95%;
+        height: 450px;
+    }
+
+    #contact aside {
+        justify-content: space-between;
+    }
+
+    #contact article {
+        width: 20%;
+        margin: 8px;
+    }
+
+}
