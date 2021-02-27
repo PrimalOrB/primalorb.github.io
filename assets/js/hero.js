@@ -11,7 +11,7 @@ var scene = new THREE.Scene();
 scene.background = null;
 
 // Camera
-var camera = new THREE.PerspectiveCamera( 90, windowWidth / windowHeight, .1, 1000 );
+var camera = new THREE.PerspectiveCamera( 140, windowWidth / windowHeight, .01, 50 );
 // camera = new THREE.OrthographicCamera( windowWidth / - scale, windowWidth / scale, windowHeight / scale, windowHeight / - scale, .1, 1000 );
 camera.aspect = windowWidth / windowHeight
 camera.position.z = -1;
@@ -48,18 +48,27 @@ const material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true
 const material2 = new THREE.LineBasicMaterial( { color: 0xffffff, linewidth: 1, linecap: 'round' } );
 
 //Geometry
-const geometry = new THREE.SphereGeometry( 5, 32, 32 );
+const geometry = new THREE.TorusKnotGeometry( 10, 5, 150, 15 );
 const model = new THREE.Mesh( geometry, material );
 model.rotation.x = Math.PI /2
-model.position.x = geometry.parameters.radius * .8
+model.position.x = geometry.parameters.radius * .4
 scene.add( model)
 
-    
+//Run the Render function    
 render();
 
 function render() {
+    // Request frame loop
     requestAnimationFrame(render);
-    model.rotation.y += .0005
+    // Rotate the model
+    model.rotation.x += .000085;
+    model.rotation.y += .00021;
+    model.rotation.z += .0003;
+    // Rotate the camera
+    camera.rotation.y += .00015;
+    camera.rotation.x += .0003;
+    camera.rotation.z += .000085;
+    // Render
     renderer.render( scene, camera )
 }
 
