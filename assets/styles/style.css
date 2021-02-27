@@ -8,6 +8,7 @@
     --gray-fade-hard: rgba(180, 180, 180, 0.75);
     --text-color: hsl(208, 38%, 25%, 1);
     --text-color-fade: hsl(208, 38%, 35%, .6);
+    --shadow: rgba(0, 0, 0, 0.2);
 }
 
 
@@ -18,6 +19,11 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-color)
+}
+
+/* Scroll padding to prevent overlapping with the sticky header */
+html {
+    scroll-padding-top: 120px;
 }
 
 /* Body - background and font size*/
@@ -94,24 +100,35 @@ header nav {
 header nav ul {
     display: flex;
     justify-content: space-around;
+    list-style: none;
     margin-bottom: 0.5rem;
 }
-    /* styling of nav li elements */
-header nav ul li {
-    flex: auto;
-    list-style: none;
-    display: inline-block;
-    padding: 5px;
-    margin: 5px 5px;    
+    /* styling of nav li a elements */
+header nav ul li a {
+    padding: 5px 20px;
+    text-decoration: none;
     border: 1px solid var(--white-full);
     border-radius: 10px;
     background-color: var(--white-fade-soft);
     font-weight: bold;
+    transition: 0.25s ease;
 }
+    /* Style button states */
+header nav ul li a:hover {
+    background-color: var(--white-fade-hard);
+    box-shadow: 0 0 5px 2px var(--shadow);
+}
+header nav ul li a:active {
+    background-color: var(--text-color);
+    color: var(--white-fade-hard);
+    box-shadow: inset 0 0 10px 3px var(--white-fade-soft);
+    outline: none;
+}
+
 
 /* Sections - general rules to apply to sections */
 section {
-    margin: 15px 0;
+    margin: 15px 0 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -205,7 +222,7 @@ section p {
     justify-content: left;
     padding: 15px;
     z-index: 99;
-    box-shadow: 3px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 2px 4px 1px var(--shadow);
     transition: 0.75s ease;
 }
     /* create block to visually transition between image border and text block */
@@ -277,6 +294,11 @@ footer {
 
 /* Tablet Size Media Query*/
 @media screen and (min-width: 768px) {
+    /* adjust scroll padding */
+    html {
+        scroll-padding-top: 78px;
+    }   
+
     /* Body - reduce font size slightly*/
     body {
         font-size: 1.15rem;
@@ -363,6 +385,11 @@ footer {
 
 /* Desktop Size Media Query */
 @media screen and (min-width: 980px) {
+    /* adjust scroll padding */
+    html {
+        scroll-padding-top: 85px;
+    } 
+
     /* Body - make body a flex to center the container */
     body {
         display: flex;
@@ -394,7 +421,7 @@ footer {
     header nav {
         flex: 3;
     }
-    header nav ul li {
+    header nav ul li a {
         font-size: 1.2rem;
     }
 
@@ -403,6 +430,10 @@ footer {
         height: 350px;
     }
 
+    /* Sections - increase vertical space */
+    section:not(header section) {
+        margin: 50px 0 50px;
+    }
     /* Work  - bring work into same style as other sections*/
     .work-flex {
         border: 0;
