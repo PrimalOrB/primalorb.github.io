@@ -1,4 +1,4 @@
-var  lights;
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@v0.126.0/build/three.module.js'
 
 // Canvas
 var container = document.querySelector('.canvas');
@@ -7,40 +7,40 @@ var windowHeight = container.clientHeight;
 var scale = 10
     
 // Scene
-var scene = new THREE.Scene();
+const scene = new THREE.Scene();
 scene.background = null;
 
 // Camera
-var camera = new THREE.PerspectiveCamera( 140, windowWidth / windowHeight, .01, 50 );
-// camera = new THREE.OrthographicCamera( windowWidth / - scale, windowWidth / scale, windowHeight / scale, windowHeight / - scale, .1, 1000 );
+const camera = new THREE.PerspectiveCamera( 140, windowWidth / windowHeight, .01, 50 );
 camera.aspect = windowWidth / windowHeight
 camera.position.z = -1;
     
 // Renderer
-var renderer = new THREE.WebGLRenderer({
+const renderer = new THREE.WebGLRenderer({
     antialias: true,
     alpha: true
 });
 renderer.setSize( windowWidth, windowHeight );
 container.appendChild( renderer.domElement );
 
-//Window Listeners
+// Window Listeners
 window.addEventListener( 'resize', resize, false);
 window.requestAnimationFrame(render);
 
-//Material
+// Material
 const material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } );
 
-//Geometry
+// Geometry
 const geometry = new THREE.TorusKnotGeometry( 10, 5, 150, 15 );
 const model = new THREE.Mesh( geometry, material );
 model.rotation.x = Math.PI /2
 model.position.x = geometry.parameters.radius * .4
 scene.add( model)
 
-//Run the Render function    
+// Run the Render function    
 render();
 
+// Render Function
 function render() {
     // Request frame loop
     requestAnimationFrame(render);
@@ -56,7 +56,7 @@ function render() {
     renderer.render( scene, camera )
 }
 
-//Function for when window is resized
+// Function for when window is resized
 function resize(){
     windowWidth = container.clientWidth;
     windowHeight = container.clientHeight
