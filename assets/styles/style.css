@@ -49,20 +49,40 @@ body {
 h1, h2, h3 {
     text-transform: uppercase;
 }
-    /* add shadow to title H1  */
-h1 {
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+    /* add shadow to title H1 and span */
+header h1, span {
+    transition: 0.5s ease;
 }
     /* span selector for different color last */
 h1 span {
     color: var(--text-color-alt);
+}
+/* Remove underline from header title link, transition on anchor for scale and shared shadow  */
+header a {
+    text-decoration: none;
+    transition: 0.5s ease;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+}
+    /* change text color on hover */
+header a:hover h1, header a:hover span {
+    color: var(--text-color-fade);
+}    
+    /* change text color on hover */
+header a:active h1, header a:active span {
+    color: var(--white-full);
+}
+    /* change scale and shadow on hover */
+header a:hover {
+    transform: scale(1.05);
+    color: var(--text-color-fade);
+    text-shadow: 0px 0px 6px var(--white-fade-hard);
 }
     /* Add margin to bottom of section h2s to give vertical space between the sections */
 section h2 {
     margin-bottom: 0.5rem;
 }
     /* Add lines between sections using ::before pseudo selector */
-#work::before, #contact::before, #resume::before{
+#work::before, #contact::before, #resume::before, footer::before{
     content: "";
     display: inline-block;
     width: 95%;
@@ -114,13 +134,13 @@ header nav ul li a {
     padding: 5px 15px;
     text-decoration: none;
     font-size: 4vw;
-    border: 1px solid var(--white-full);
+    border: none;
     border-radius: 10px;
     background-color: var(--white-fade-soft);
     font-weight: bold;
     transition: 0.25s ease;
 }
-    /* Style button states */
+    /* Style button states for nav and contact*/
 header nav ul li a:hover, #contact a:hover {
     background-color: var(--white-fade-hard);
     box-shadow: 0 0 5px 2px var(--shadow);
@@ -295,6 +315,7 @@ section p {
     background-color: var(--white-fade-soft);
     border-radius: 10px;
     text-decoration: none;
+    transition: 0.5s ease;
 }
     /* container to hold contact element img */
 #contact div{
@@ -315,9 +336,15 @@ section p {
 
 /* Footer - footer element*/
 footer {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    display:inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    padding: 10px 0;
+    font-size: small;
+    text-transform: uppercase;
 }
 
 /* Tablet Size Media Query*/
@@ -526,12 +553,12 @@ footer {
     }
     /* change text padding for project label text */
     #work article .project-label h3 {
-        padding: 15px 20px 15px 15px;
-        font-size: 1.5rem;
+        padding: 15px 0 15px 15px;
+        font-size: 1.3rem;
     }
         /* change text size */
     #work article .project-label h4 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
         /* change max width for label expansion */
     #work article:hover .project-label h4 {
