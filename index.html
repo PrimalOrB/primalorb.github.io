@@ -65,9 +65,9 @@
                     <p></p>
                 </div>
                 <!-- group to contain the work articles -->
-                <div class="group">
+                <ul class="group">
                     <!-- each project -->
-                    <article>
+                    <li>
                         <!-- project image container and keep image scale effect from overflowing -->
                         <div class="image-container">
                             <div class="project-label">
@@ -79,8 +79,8 @@
                             <img src="https://picsum.photos/400" alt="" srcset="">
                         </div>
 
-                    </article>
-                    <article>
+                    </li>
+                    <li>
                         <div class="image-container">
                             <div class="project-label">
                                 <h3>Run Buddy</h3>
@@ -89,8 +89,8 @@
                             <img src="https://picsum.photos/401" alt="" srcset="">
                         </div>
 
-                    </article>
-                    <article>
+                    </li>
+                    <li>
                         <div class="image-container">
                             <div class="project-label">
                                 <h3>Code Refactor</h3>
@@ -99,8 +99,8 @@
                             <img src="https://picsum.photos/402" alt="" srcset="">
                         </div>
 
-                    </article>
-                    <article>
+                    </li>
+                    <li>
                         <div class="image-container">
                             <div class="project-label">
                                 <h3>Project 4</h3>
@@ -109,8 +109,8 @@
                             <img src="https://picsum.photos/403" alt="" srcset="">
                         </div>
 
-                    </article>
-                    <article>
+                    </li>
+                    <li>
                         <div class="image-container">
                             <div class="project-label">
                                 <h3>Project 5</h3>
@@ -118,8 +118,8 @@
                             </div>
                             <img src="https://picsum.photos/404" alt="" srcset="">
                         </div>
-                    </article>
-                </div>
+                    </li>
+                    </el>
             </section>
 
             <!-- Contact -->
@@ -132,20 +132,20 @@
                     <a id="LinkedIn" href="http://www.linkedin.com/in/andrew-ogilvie-725206153" target="_blank">
                         <!-- image / icon -->
                         <div><i class="fa fa-linkedin-square"></i></div>
-                        <!-- test -->
-                        <p>Linkedin</p>
+                        <!-- aria hidden attribute so it does not get read twice -->
+                        <p aria-hidden="true">Linkedin</p>
                     </a>
                     <a id="GitHub" href="https://github.com/PrimalOrB" target="_blank">
                         <div><i class="fa fa-github-square"></i></div>
-                        <p>GitHub</p>
+                        <p aria-hidden="true">GitHub</p>
                     </a>
                     <a id="Email" href="mailto://primalorb@gmail.com" target="_blank">
                         <div><i class="fas fa-at"></i></div>
-                        <p>Email</p>
+                        <p aria-hidden="true">Email</p>
                     </a>
                     <a id="Phone" href="tel:4168456942">
                         <div><i class="fas fa-phone-square"></i></div>
-                        <p>416-845-6942</p>
+                        <p aria-hidden="true">416-845-6942</p>
                     </a>
                 </aside>
             </section>
@@ -160,7 +160,6 @@
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                     culpa qui officia deserunt mollit anim id est laborum.</p>
             </section>
-
         </main>
 
         <!-- Footer -->

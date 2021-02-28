@@ -221,7 +221,7 @@ section p {
     justify-content: space-around;
 }
     /* each project article */
-#work article {
+#work li {
     width: 90%;
     height: 125px;
     position: relative;
@@ -230,11 +230,11 @@ section p {
     overflow: hidden;
 }
     /* override for first project size */
-#work article:first-of-type {
+#work li:first-of-type {
     height: 250px;
 }
     /* label for projects which can flex dynamically and show/hide the extra description text */
-#work article .project-label {
+#work li .project-label {
     max-width: calc(100% - 20px);
     position: absolute;
     bottom: 15px;
@@ -248,7 +248,7 @@ section p {
     
 }
     /* primary label does not change flex properties*/
-#work article .project-label h3 {
+#work li .project-label h3 {
     padding: 8px 20px 8px 15px;
     width: auto;
     flex-basis: auto;
@@ -258,7 +258,7 @@ section p {
     box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0);
 }
     /* extra description initial state is zero opacity and zero width */
-#work article .project-label h4 {
+#work li .project-label h4 {
     display: flex;
     align-items: center;
     width: 0;
@@ -276,18 +276,18 @@ section p {
     font-size: 0.8rem;
 }
     /* hover makes background opaque */
-#work article:hover .project-label {
+#work li:hover .project-label {
     background-color: var(--white-full);
     box-shadow: 1px 2px 5px 2px var(--shadow);
 }
     /* hover adjusts flex properties, width, and opacity to expand */
-#work article:hover .project-label h4 {
+#work li:hover .project-label h4 {
     width: 700px;
     flex-grow: 1;
     opacity: 1;
 }
     /* img for project */
-#work article .image-container img {
+#work li .image-container img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -295,7 +295,7 @@ section p {
     transition: 0.75s ease;
 }
     /* Hover effects for the image */
-#work article .image-container:hover img {
+#work li .image-container:hover img {
     transform: scale(1.1);
     filter: blur(2px) saturate(.15) brightness(1.1);
 }
@@ -421,24 +421,24 @@ footer p {
         flex: 3;
      }
         /* resize project elements */
-    #work article {
+    #work li {
         height: 200px;
     }
         /* resize first project element */
-    #work article:first-of-type {
+    #work li:first-of-type {
         height: 400px;
     }
     /* change text padding for project label text */
-    #work article .project-label h3 {
+    #work li .project-label h3 {
         padding: 10px 20px 10px 15px;
         font-size: 1.3rem;
     }
         /* change text size */
-     #work article .project-label h4 {
+     #work li .project-label h4 {
         font-size: 1rem;
     }
         /* change max width for label expansion */
-    #work article:hover .project-label h4 {
+    #work li:hover .project-label h4 {
         width: 870px;
     }
 
@@ -542,26 +542,26 @@ footer p {
         padding: 0 15px;
     }
         /* enable side-by side appropriate flex sizes */
-    #work article {
+    #work li {
         width: 45%;
         height: 300px;
     }
         /* resize first element */
-    #work article:first-of-type {
+    #work li:first-of-type {
         width: 95%;
         height: 450px;
     }
     /* change text padding for project label text */
-    #work article .project-label h3 {
+    #work li .project-label h3 {
         padding: 15px 0 15px 15px;
         font-size: 1.3rem;
     }
         /* change text size */
-    #work article .project-label h4 {
+    #work li .project-label h4 {
         font-size: 1rem;
     }
         /* change max width for label expansion */
-    #work article:hover .project-label h4 {
+    #work li:hover .project-label h4 {
         width: 870px;
     }
 
