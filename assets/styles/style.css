@@ -498,6 +498,7 @@ footer p {
         /* reposition contact elements */
     #contact article p{
         flex: 3;
+    }
 }
 
 /* Desktop Size Media Query */
