@@ -209,16 +209,17 @@ section p:not(#about p) {
 #about .group {
     width: 95%;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: top;
 }
 #about .group p {
-    flex: 1;
+    width: 100%;
 }
     /* image container div */
 #about .group div {
     flex-basis: 200px;
+    margin-top: 15px;
     margin-left: 15px;
     width: 200px;
     height: 200px;
@@ -232,7 +233,6 @@ section p:not(#about p) {
     position: center;
     filter: brightness(1.2)
 }
-
 
 /* Work - flex initial layout for mobile is wide, with more height for the first project*/
 .work-flex {
@@ -452,10 +452,16 @@ footer p {
     }
 
     /* About */
-    /* Contact */
     #about .group {
         flex: 3;
         padding: 0 15px;
+    }
+    #about .group p {
+        width: auto;
+        flex: 1;
+    }
+    #about .group div {
+        margin-right: 0;
     }
  
     /* Work - reposition the h2 to align with other sections*/
