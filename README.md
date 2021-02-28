@@ -8,7 +8,7 @@ Professional Portfolio of Andrew Ogilvie
 * CSS Flexbox
 * CSS Filters (hover effects)
 * CSS Media Queries
-* Three.js [threejs.org](http://www.threejs.org) [threejs github](https://github.com/mrdoob/three.js)
+* Three.js [threejs.org](http://www.threejs.org) | [threejs github](https://github.com/mrdoob/three.js)
 
 ## Website
 https://primalorb.github.io/
