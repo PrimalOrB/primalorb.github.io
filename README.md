@@ -17,6 +17,7 @@ https://primalorb.github.io/
 * W3 Schools - [Scroll Behaviour](https://www.w3schools.com/cssref/pr_scroll-behavior.asp) - Reference
 * CSS Tricks - [Scroll Padding](https://css-tricks.com/almanac/properties/s/scroll-padding) - Reference
 * W3 Schools - [CSS Filter](https://www.w3schools.com/cssref/css3_pr_filter.asp) - Reference
-* Font Awesome Logos - [Contact Logos](https://www.w3schools.com/icons/fontawesome_icons_intro.asp) - Included
+* Font Awesome - [Contact Logos](https://fontawesome.com/) - Included
+* Elegant Themes - [Call Link](https://www.elegantthemes.com/blog/wordpress/call-link-html-phone-number) - Included
 
 ##  ©️2021 Andrew Ogilvie
