@@ -5,11 +5,167 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my Github page</title>
+    <title>Andrew Ogilvie Portfolio</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <!-- Link to font awesome kit -->
+    <script src="https://kit.fontawesome.com/20930007b6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Random title</h1>
+    <!-- Content -->
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <!-- Name -->
+            <section>
+                <a href="#" aria-label="Andrew Ogilvie">
+                    <h1>Andrew <span>Ogilvie</span> </h1>
+                </a>
+            </section>
+            <!-- Nav -->
+            <nav>
+                <!-- aria rols for clarity with screen reader-->
+                <ul aria-label="Navigation Menu" role="menubar">
+                    <li role="none"><a role="menuitem" href="#about">About</a></li>
+                    <li role="none"><a role="menuitem" href="#work">Work</a></li>
+                    <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+                    <li role="none"><a role="menuitem" href="#resume">Resume</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero -->
+        <section id="hero">
+            <!-- three js element -->
+            <div class="canvas"></div>
+            <!-- text overlay -->
+            <h2>Dare to dream</h2>
+        </section>
+
+        <main>
+
+            <!-- About -->
+            <section id="about">
+                <!-- title for about area -->
+                <h2>about me</h2>
+                <div class="group">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div>
+                        <img src="https://user-images.githubusercontent.com/69044956/109425982-113c3080-79b9-11eb-89eb-07723ddd6c18.jpg"
+                            alt="Andrew Ogilvie">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Work -->
+            <section id="work">
+                <!-- flex area for work title, as it has a different breakpoint than other sections -->
+                <div class="work-flex">
+                    <!-- title for work area -->
+                    <h2>my work</h2>
+                    <!-- placeholder so flex is possible -->
+                    <p></p>
+                </div>
+                <!-- group to contain the work articles -->
+                <ul class="group">
+                    <!-- each project -->
+                    <li>
+                        <!-- project image container and keep image scale effect from overflowing -->
+                        <div class="project-label">
+                            <!-- project title -->
+                            <h3>Portfolio</h3>
+                            <!-- project description -->
+                            <div>HTML / CSS / Three.js</div>
+                        </div>
+                        <img src="https://picsum.photos/400" alt="placeholder desc">
+                    </li>
+                    <li>
+                        <div class="project-label">
+                            <h3>Run Buddy</h3>
+                            <div>HTML / CSS</div>
+                        </div>
+                        <img src="https://picsum.photos/401" alt="placeholder desc">
+                    </li>
+                    <li>
+                        <div class="project-label">
+                            <h3>Code Refactor</h3>
+                            <div>HTML / CSS</div>
+                        </div>
+                        <img src="https://picsum.photos/402" alt="placeholder desc">
+                    </li>
+                    <li>
+                        <div class="project-label">
+                            <h3>Project 4</h3>
+                            <div>Helper Text</div>
+                        </div>
+                        <img src="https://picsum.photos/403" alt="placeholder desc">
+                    </li>
+                    <li>
+                        <div class="project-label">
+                            <h3>Project 5</h3>
+                            <div>Helper Text</div>
+                        </div>
+                        <img src="https://picsum.photos/404" alt="placeholder desc">
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact">
+                <!-- title for contact area -->
+                <h2>contact me</h2>
+                <!-- aside to contain individual contact elements -->
+                <aside>
+                    <!-- contact element -->
+                    <a id="LinkedIn" href="http://www.linkedin.com/in/andrew-ogilvie-725206153" target="_blank">
+                        <!-- image / icon -->
+                        <div><i class="fa fa-linkedin-square"></i></div>
+                        <!-- aria hidden attribute so it does not get read twice -->
+                        <p aria-hidden="true">Linkedin</p>
+                    </a>
+                    <a id="GitHub" href="https://github.com/PrimalOrB" target="_blank">
+                        <div><i class="fa fa-github-square"></i></div>
+                        <p aria-hidden="true">GitHub</p>
+                    </a>
+                    <a id="Email" href="mailto://primalorb@gmail.com" target="_blank">
+                        <div><i class="fas fa-at"></i></div>
+                        <p aria-hidden="true">Email</p>
+                    </a>
+                    <a id="Phone" href="tel:4168456942">
+                        <div><i class="fas fa-phone-square"></i></div>
+                        <p aria-hidden="true">416-845-6942</p>
+                    </a>
+                </aside>
+            </section>
+
+            <!-- Resume -->
+            <section id="resume">
+                <!-- title for resume area -->
+                <h2>Resume</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2021 Andrew Ogilvie</p>
+        </footer>
+
+    </div>
+
+    <!-- Script for hero three js banner -->
+    <script type="module" src="./assets/js/hero.js"></script>
+
+
 </body>
 
 </html>
