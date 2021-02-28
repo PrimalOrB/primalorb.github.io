@@ -121,14 +121,14 @@ header nav ul li a {
     transition: 0.25s ease;
 }
     /* Style button states */
-header nav ul li a:hover {
+header nav ul li a:hover, #contact a:hover {
     background-color: var(--white-fade-hard);
     box-shadow: 0 0 5px 2px var(--shadow);
 }
-header nav ul li a:active {
+header nav ul li a:active, #contact a:active, #contact a p:active {
     background-color: var(--text-color);
     color: var(--white-fade-hard);
-    box-shadow: inset 0 0 10px 3px var(--white-fade-soft);
+    border-radius: 10px;
     outline: none;
 }
 
@@ -253,6 +253,7 @@ section p {
     color: var(--text-color-alt);
     white-space: nowrap;
     padding-right: 20px;
+    font-size: 0.8rem;
 }
     /* hover makes background opaque */
 #work article:hover .project-label {
@@ -287,19 +288,30 @@ section p {
     justify-content: space-around;
 }
     /* each contact elemennt */
-#contact article {
+#contact a {
     width: 40%;
     display: flex;
     margin: 15px;
+    background-color: var(--white-fade-soft);
+    border-radius: 10px;
+    text-decoration: none;
 }
     /* container to hold contact element img */
-#contact article div{
+#contact div{
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+    /* Font Awesome Logos */
+#contact i {
+    font-size: 30px;
+}
+    /* Phone text size smaller */
+#Phone p {
+    font-size: 0.9rem;
+ }
 
 /* Footer - footer element*/
 footer {
@@ -353,6 +365,7 @@ footer {
         flex: 1;
         text-align: right;
         padding-right: 30px;
+        padding-top: 0;
         border-right: 5px solid var(--white-fade-hard);
     }
     section p {
@@ -374,6 +387,7 @@ footer {
     #work h2:not(#hero h2) {
         flex: 1;
         text-align: right;
+        padding-right: 30px;
      }
         /* p element is an empty element to assist with flex alignment */
     .work-flex p {
@@ -392,7 +406,11 @@ footer {
         padding: 10px 20px 10px 15px;
         font-size: 1.3rem;
     }
-    /* change max width for label expansion */
+        /* change text size */
+     #work article .project-label h4 {
+        font-size: 1rem;
+    }
+        /* change max width for label expansion */
     #work article:hover .project-label h4 {
         width: 870px;
     }
@@ -460,6 +478,11 @@ footer {
         margin: 50px 0 50px;
     }
     /* Work  - bring work into same style as other sections*/
+    #work h2:not(#hero h2) {
+        padding-top: 0;
+        padding-right: 0;
+    }
+
     .work-flex {
         border: 0;
         flex: 1;
@@ -506,9 +529,13 @@ footer {
         padding: 15px 20px 15px 15px;
         font-size: 1.5rem;
     }
-    /* change max width for label expansion */
+        /* change text size */
+    #work article .project-label h4 {
+        font-size: 1.1rem;
+    }
+        /* change max width for label expansion */
     #work article:hover .project-label h4 {
-        width: 8000px;
+        width: 870px;
     }
 
     /* Contact - change layout to size by side articles */
@@ -516,8 +543,7 @@ footer {
         justify-content: space-evenly;
     }
     /* change size of articles */
-    #contact article {
-        border: 1px solid black;
+    #contact a {
         width: 20%;
         margin: 8px;
     }
