@@ -287,6 +287,7 @@ section p:not(#about p) {
     white-space: nowrap;
     font-size: 1rem;
     box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0);
+    transition: 0.75s ease;
 }
     /* extra description initial state is zero opacity and zero width */
 #work li .project-label div {
@@ -297,7 +298,7 @@ section p:not(#about p) {
     overflow: hidden;
     justify-content: flex-end;
     flex-grow: 0;
-    transition: 1s ease;
+    transition: 0.75s ease;
     font-size: .9em;
     font-style: italic;
     opacity: 0;
@@ -310,6 +311,14 @@ section p:not(#about p) {
 #work li:hover .project-label {
     background-color: var(--white-full);
     box-shadow: 1px 2px 5px 2px var(--shadow);
+}
+    /* active makes background color change */
+#work li:active .project-label{
+    background-color: var(--text-color-alt);
+}
+    /* active changes text color */
+#work li:active .project-label h3, #work li:active .project-label div{
+    color: var(--white-full)
 }
     /* hover adjusts flex properties, width, and opacity to expand */
 #work li:hover .project-label div {
