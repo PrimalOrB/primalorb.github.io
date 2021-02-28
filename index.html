@@ -19,17 +19,18 @@
         <header>
             <!-- Name -->
             <section>
-                <a href="#">
+                <a href="#" aria-label="Andrew Ogilvie">
                     <h1>Andrew <span>Ogilvie</span> </h1>
                 </a>
             </section>
             <!-- Nav -->
             <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#resume">Resme</a></li>
+                <!-- aria rols for clarity with screen reader-->
+                <ul aria-label="Navigation Menu" role="menubar">
+                    <li role="none"><a role="menuitem" href="#about">About</a></li>
+                    <li role="none"><a role="menuitem" href="#work">Work</a></li>
+                    <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+                    <li role="none"><a role="menuitem" href="#resume">Resume</a></li>
                 </ul>
             </nav>
         </header>
