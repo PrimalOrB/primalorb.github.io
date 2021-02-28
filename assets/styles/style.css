@@ -13,7 +13,6 @@
     --shadow: rgba(0, 0, 0, 0.2);
 }
 
-
 /* All  - initial settings for all page elements*/
 * {
     box-sizing: border-box;
@@ -166,8 +165,8 @@ section h2:not(#hero h2) {
     text-align: center;
     padding-top: 0.5em;
 }
-    /* section paragraphs */
-section p {
+    /* vcenter section paragraphs, not about (to be top)*/
+section p:not(#about p) {
     flex: 1;
     display: flex;
     justify-content: left;
@@ -207,6 +206,33 @@ section p {
 }
 
 /* About - no specific rules needed*/
+#about .group {
+    width: 95%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: top;
+}
+#about .group p {
+    flex: 1;
+}
+    /* image container div */
+#about .group div {
+    flex-basis: 200px;
+    margin-left: 15px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+    /* image fit by width (assuming portrait photo) */
+#about img {
+    width: 100%;
+    object-fit: cover;
+    position: center;
+    filter: brightness(1.2)
+}
+
 
 /* Work - flex initial layout for mobile is wide, with more height for the first project*/
 .work-flex {
@@ -221,20 +247,25 @@ section p {
     justify-content: space-around;
 }
     /* each project article */
-#work article {
+#work li {
     width: 90%;
     height: 125px;
     position: relative;
-    margin: 10px 0;
+    margin-top: 15px;
     border: 2px solid var(--white-full);
     overflow: hidden;
 }
+    /* remove top margin from first li */
+#work li:first-of-type {
+    margin-top: 0;
+}
+
     /* override for first project size */
-#work article:first-of-type {
+#work li:first-of-type {
     height: 250px;
 }
     /* label for projects which can flex dynamically and show/hide the extra description text */
-#work article .project-label {
+#work li .project-label {
     max-width: calc(100% - 20px);
     position: absolute;
     bottom: 15px;
@@ -248,7 +279,7 @@ section p {
     
 }
     /* primary label does not change flex properties*/
-#work article .project-label h3 {
+#work li .project-label h3 {
     padding: 8px 20px 8px 15px;
     width: auto;
     flex-basis: auto;
@@ -258,7 +289,7 @@ section p {
     box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0);
 }
     /* extra description initial state is zero opacity and zero width */
-#work article .project-label h4 {
+#work li .project-label div {
     display: flex;
     align-items: center;
     width: 0;
@@ -276,18 +307,18 @@ section p {
     font-size: 0.8rem;
 }
     /* hover makes background opaque */
-#work article:hover .project-label {
+#work li:hover .project-label {
     background-color: var(--white-full);
     box-shadow: 1px 2px 5px 2px var(--shadow);
 }
     /* hover adjusts flex properties, width, and opacity to expand */
-#work article:hover .project-label h4 {
+#work li:hover .project-label div {
     width: 700px;
     flex-grow: 1;
     opacity: 1;
 }
     /* img for project */
-#work article .image-container img {
+#work li img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -295,7 +326,7 @@ section p {
     transition: 0.75s ease;
 }
     /* Hover effects for the image */
-#work article .image-container:hover img {
+#work li:hover img {
     transform: scale(1.1);
     filter: blur(2px) saturate(.15) brightness(1.1);
 }
@@ -332,6 +363,7 @@ section p {
     /* Phone text size smaller */
 #Phone p {
     font-size: 0.9rem;
+    /* align-content: center; */
  }
 
 /* Footer - footer element*/
@@ -395,7 +427,7 @@ footer p {
         padding-top: 0;
         border-right: 5px solid var(--white-fade-hard);
     }
-    section p {
+    section p:not(#about p)  {
         flex: 3;
     }
 
@@ -410,6 +442,13 @@ footer p {
         height: 250px;
     }
 
+    /* About */
+    /* Contact */
+    #about .group {
+        flex: 3;
+        padding: 0 15px;
+    }
+ 
     /* Work - reposition the h2 to align with other sections*/
     #work h2:not(#hero h2) {
         flex: 1;
@@ -421,24 +460,24 @@ footer p {
         flex: 3;
      }
         /* resize project elements */
-    #work article {
+    #work li {
         height: 200px;
     }
         /* resize first project element */
-    #work article:first-of-type {
+    #work li:first-of-type {
         height: 400px;
     }
     /* change text padding for project label text */
-    #work article .project-label h3 {
+    #work li .project-label h3 {
         padding: 10px 20px 10px 15px;
         font-size: 1.3rem;
     }
         /* change text size */
-     #work article .project-label h4 {
+     #work li .project-label div {
         font-size: 1rem;
     }
         /* change max width for label expansion */
-    #work article:hover .project-label h4 {
+    #work li:hover .project-label div {
         width: 870px;
     }
 
@@ -463,7 +502,7 @@ footer p {
     body {
         display: flex;
         justify-content: center;
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
         /* larger title and position change */
     h1 {
@@ -504,6 +543,12 @@ footer p {
     section:not(header section) {
         margin: 50px 0 50px;
     }
+
+        /* image container div */
+    #about .group div {
+        margin-right: 15px;
+    }
+
     /* Work  - bring work into same style as other sections*/
     #work h2:not(#hero h2) {
         padding-top: 0;
@@ -542,26 +587,26 @@ footer p {
         padding: 0 15px;
     }
         /* enable side-by side appropriate flex sizes */
-    #work article {
+    #work li {
         width: 45%;
         height: 300px;
     }
         /* resize first element */
-    #work article:first-of-type {
+    #work li:first-of-type {
         width: 95%;
         height: 450px;
     }
     /* change text padding for project label text */
-    #work article .project-label h3 {
+    #work li .project-label h3 {
         padding: 15px 0 15px 15px;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
         /* change text size */
-    #work article .project-label h4 {
-        font-size: 1rem;
+    #work li .project-label div {
+        font-size: .9rem;
     }
         /* change max width for label expansion */
-    #work article:hover .project-label h4 {
+    #work li:hover .project-label div {
         width: 870px;
     }
 

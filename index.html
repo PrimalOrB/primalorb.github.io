@@ -48,11 +48,17 @@
             <section id="about">
                 <!-- title for about area -->
                 <h2>about me</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="group">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div>
+                        <img src="https://user-images.githubusercontent.com/69044956/109425982-113c3080-79b9-11eb-89eb-07723ddd6c18.jpg"
+                            alt="Andrew Ogilvie">
+                    </div>
+                </div>
             </section>
 
             <!-- Work -->
@@ -65,61 +71,47 @@
                     <p></p>
                 </div>
                 <!-- group to contain the work articles -->
-                <div class="group">
+                <ul class="group">
                     <!-- each project -->
-                    <article>
+                    <li>
                         <!-- project image container and keep image scale effect from overflowing -->
-                        <div class="image-container">
-                            <div class="project-label">
-                                <!-- project title -->
-                                <h3>Portfolio</h3>
-                                <!-- project description -->
-                                <h4>HTML / CSS / Three.js</h4>
-                            </div>
-                            <img src="https://picsum.photos/400" alt="" srcset="">
+                        <div class="project-label">
+                            <!-- project title -->
+                            <h3>Portfolio</h3>
+                            <!-- project description -->
+                            <div>HTML / CSS / Three.js</div>
                         </div>
-
-                    </article>
-                    <article>
-                        <div class="image-container">
-                            <div class="project-label">
-                                <h3>Run Buddy</h3>
-                                <h4>HTML / CSS</h4>
-                            </div>
-                            <img src="https://picsum.photos/401" alt="" srcset="">
+                        <img src="https://picsum.photos/400" alt="placeholder desc">
+                    </li>
+                    <li>
+                        <div class="project-label">
+                            <h3>Run Buddy</h3>
+                            <div>HTML / CSS</div>
                         </div>
-
-                    </article>
-                    <article>
-                        <div class="image-container">
-                            <div class="project-label">
-                                <h3>Code Refactor</h3>
-                                <h4>HTML / CSS</h4>
-                            </div>
-                            <img src="https://picsum.photos/402" alt="" srcset="">
+                        <img src="https://picsum.photos/401" alt="placeholder desc">
+                    </li>
+                    <li>
+                        <div class="project-label">
+                            <h3>Code Refactor</h3>
+                            <div>HTML / CSS</div>
                         </div>
-
-                    </article>
-                    <article>
-                        <div class="image-container">
-                            <div class="project-label">
-                                <h3>Project 4</h3>
-                                <h4>Helper Text</h4>
-                            </div>
-                            <img src="https://picsum.photos/403" alt="" srcset="">
+                        <img src="https://picsum.photos/402" alt="placeholder desc">
+                    </li>
+                    <li>
+                        <div class="project-label">
+                            <h3>Project 4</h3>
+                            <div>Helper Text</div>
                         </div>
-
-                    </article>
-                    <article>
-                        <div class="image-container">
-                            <div class="project-label">
-                                <h3>Project 5</h3>
-                                <h4>Helper Text</h4>
-                            </div>
-                            <img src="https://picsum.photos/404" alt="" srcset="">
+                        <img src="https://picsum.photos/403" alt="placeholder desc">
+                    </li>
+                    <li>
+                        <div class="project-label">
+                            <h3>Project 5</h3>
+                            <div>Helper Text</div>
                         </div>
-                    </article>
-                </div>
+                        <img src="https://picsum.photos/404" alt="placeholder desc">
+                    </li>
+                </ul>
             </section>
 
             <!-- Contact -->
@@ -132,20 +124,20 @@
                     <a id="LinkedIn" href="http://www.linkedin.com/in/andrew-ogilvie-725206153" target="_blank">
                         <!-- image / icon -->
                         <div><i class="fa fa-linkedin-square"></i></div>
-                        <!-- test -->
-                        <p>Linkedin</p>
+                        <!-- aria hidden attribute so it does not get read twice -->
+                        <p aria-hidden="true">Linkedin</p>
                     </a>
                     <a id="GitHub" href="https://github.com/PrimalOrB" target="_blank">
                         <div><i class="fa fa-github-square"></i></div>
-                        <p>GitHub</p>
+                        <p aria-hidden="true">GitHub</p>
                     </a>
                     <a id="Email" href="mailto://primalorb@gmail.com" target="_blank">
                         <div><i class="fas fa-at"></i></div>
-                        <p>Email</p>
+                        <p aria-hidden="true">Email</p>
                     </a>
                     <a id="Phone" href="tel:4168456942">
                         <div><i class="fas fa-phone-square"></i></div>
-                        <p>416-845-6942</p>
+                        <p aria-hidden="true">416-845-6942</p>
                     </a>
                 </aside>
             </section>
@@ -160,7 +152,6 @@
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                     culpa qui officia deserunt mollit anim id est laborum.</p>
             </section>
-
         </main>
 
         <!-- Footer -->
