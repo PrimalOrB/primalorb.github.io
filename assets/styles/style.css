@@ -5,8 +5,10 @@
     --white-full: rgba(255, 255, 255, 1);
     --white-fade-hard: rgba(255, 255, 255, 0.75);
     --white-fade-soft: rgba(255, 255, 255, 0.25);
+    --gray:  rgba(180, 180, 180, 1);
     --gray-fade-hard: rgba(180, 180, 180, 0.75);
-    --text-color: hsl(208, 38%, 25%, 1);
+    --text-color: hsl(208, 38%, 35%, 1);
+    --text-color-alt: hsl(208, 38%, 25%, 1);
     --text-color-fade: hsl(208, 38%, 35%, .6);
     --shadow: rgba(0, 0, 0, 0.2);
 }
@@ -21,9 +23,10 @@
     color: var(--text-color)
 }
 
-/* Scroll padding to prevent overlapping with the sticky header */
+/* Scroll padding to prevent overlapping with the sticky header, and smooth transition */
 html {
     scroll-padding-top: 120px;
+    scroll-behavior: smooth;
 }
 
 /* Body - background and font size*/
@@ -40,7 +43,6 @@ body {
 /* Container - containing element of the body to fade over background, more prevalent in wider desktop displays */
 .container {
     background-color: var(--white-fade-soft);
-    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Headings - uppercase transformation of headings*/
@@ -50,6 +52,10 @@ h1, h2, h3 {
     /* add shadow to title H1  */
 h1 {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+}
+    /* span selector for different color last */
+h1 span {
+    color: var(--text-color-alt);
 }
     /* Add margin to bottom of section h2s to give vertical space between the sections */
 section h2 {
@@ -68,7 +74,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -101,12 +107,13 @@ header nav ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
     /* styling of nav li a elements */
 header nav ul li a {
-    padding: 5px 20px;
+    padding: 5px 15px;
     text-decoration: none;
+    font-size: 4vw;
     border: 1px solid var(--white-full);
     border-radius: 10px;
     background-color: var(--white-fade-soft);
@@ -114,14 +121,14 @@ header nav ul li a {
     transition: 0.25s ease;
 }
     /* Style button states */
-header nav ul li a:hover {
+header nav ul li a:hover, #contact a:hover {
     background-color: var(--white-fade-hard);
     box-shadow: 0 0 5px 2px var(--shadow);
 }
-header nav ul li a:active {
+header nav ul li a:active, #contact a:active, #contact a p:active {
     background-color: var(--text-color);
     color: var(--white-fade-hard);
-    box-shadow: inset 0 0 10px 3px var(--white-fade-soft);
+    border-radius: 10px;
     outline: none;
 }
 
@@ -206,46 +213,58 @@ section p {
 #work article:first-of-type {
     height: 250px;
 }
-    /* project title overlay h3 */
-#work article h3 {
+    /* label for projects which can flex dynamically and show/hide the extra description text */
+#work article .project-label {
+    max-width: calc(100% - 20px);
     position: absolute;
-    display: flex;
     bottom: 15px;
-    width: 50%;
-    height: 35px;
-    transform: translateX(15px);
-    border-radius: 0 10px 10px 0;
-    border: 1px solid var(--white-full);
-    color: var(--text-color);
+    display: flex;
     background-color: var(--white-fade-hard);
+    z-index: 555;
+    border-radius: 0 10px 10px 0;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: var(--white-full);
+    
+}
+    /* primary label does not change flex properties*/
+#work article .project-label h3 {
+    padding: 8px 20px 8px 15px;
+    width: auto;
+    flex-basis: auto;
+    flex-grow: 1;
+    white-space: nowrap;
+    font-size: 1rem;
+    box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0);
+}
+    /* extra description initial state is zero opacity and zero width */
+#work article .project-label h4 {
+    display: flex;
     align-items: center;
-    justify-content: left;
-    padding: 15px;
-    z-index: 99;
-    box-shadow: 3px 2px 4px 1px var(--shadow);
-    transition: 0.75s ease;
+    width: 0;
+    min-width: 0;
+    overflow: hidden;
+    justify-content: flex-end;
+    flex-grow: 0;
+    transition: 1s ease;
+    font-size: .9em;
+    font-style: italic;
+    opacity: 0;
+    color: var(--text-color-alt);
+    white-space: nowrap;
+    padding-right: 20px;
+    font-size: 0.8rem;
 }
-    /* create block to visually transition between image border and text block */
-#work article h3::after {
-    content: "";
-    display: block;
-    position:absolute;
-    width: 35px;
-    height: 34px;
-    border: 1px solid var(--white-fade-hard);
-    background-color: var(--gray-fade-hard);
-    transform: translateY(50%) translateX(calc(-100% - 15px)) skewY(-45deg);
-    z-index: -30;
-}
-    /* hover effect for the overlaid title */
-#work article:hover h3 {
+    /* hover makes background opaque */
+#work article:hover .project-label {
     background-color: var(--white-full);
-    width: 65%
+    box-shadow: 1px 2px 5px 2px var(--shadow);
 }
-    /* container to hold project image itself */
-#work article .image-container {
-    height: 100%;
-    width: 100%;
+    /* hover adjusts flex properties, width, and opacity to expand */
+#work article:hover .project-label h4 {
+    width: 700px;
+    flex-grow: 1;
+    opacity: 1;
 }
     /* img for project */
 #work article .image-container img {
@@ -261,7 +280,6 @@ section p {
     filter: blur(2px) saturate(.15) brightness(1.1);
 }
 
-
 /* Contact - flex for contact area children*/
 #contact aside {
     width: 100%;
@@ -270,19 +288,30 @@ section p {
     justify-content: space-around;
 }
     /* each contact elemennt */
-#contact article {
+#contact a {
     width: 40%;
     display: flex;
     margin: 15px;
+    background-color: var(--white-fade-soft);
+    border-radius: 10px;
+    text-decoration: none;
 }
     /* container to hold contact element img */
-#contact article div{
+#contact div{
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+    /* Font Awesome Logos */
+#contact i {
+    font-size: 30px;
+}
+    /* Phone text size smaller */
+#Phone p {
+    font-size: 0.9rem;
+ }
 
 /* Footer - footer element*/
 footer {
@@ -290,7 +319,6 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
 
 /* Tablet Size Media Query*/
 @media screen and (min-width: 768px) {
@@ -328,12 +356,16 @@ footer {
         width: 100%;
         margin-bottom: 0;
     }
+    header nav ul li a{
+        font-size: 1.25rem;
+    }
 
     /* Sections - reposition flex sections (not work section as it has a different break point)*/
     section h2:not(#hero h2):not(.work-flex h2) {
         flex: 1;
         text-align: right;
         padding-right: 30px;
+        padding-top: 0;
         border-right: 5px solid var(--white-fade-hard);
     }
     section p {
@@ -355,6 +387,7 @@ footer {
     #work h2:not(#hero h2) {
         flex: 1;
         text-align: right;
+        padding-right: 30px;
      }
         /* p element is an empty element to assist with flex alignment */
     .work-flex p {
@@ -368,9 +401,18 @@ footer {
     #work article:first-of-type {
         height: 400px;
     }
-        /* reposition project text overlay */
-    #work article h3 {
-        width: 35%;
+    /* change text padding for project label text */
+    #work article .project-label h3 {
+        padding: 10px 20px 10px 15px;
+        font-size: 1.3rem;
+    }
+        /* change text size */
+     #work article .project-label h4 {
+        font-size: 1rem;
+    }
+        /* change max width for label expansion */
+    #work article:hover .project-label h4 {
+        width: 870px;
     }
 
     /* Contact */
@@ -411,6 +453,7 @@ footer {
         max-width: 1200px;
         border-left: 5px solid var(--white-full);
         border-right: 5px solid var(--white-full);
+        box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
     }
 
     /* Header and nav - reposition slightly */
@@ -435,6 +478,11 @@ footer {
         margin: 50px 0 50px;
     }
     /* Work  - bring work into same style as other sections*/
+    #work h2:not(#hero h2) {
+        padding-top: 0;
+        padding-right: 0;
+    }
+
     .work-flex {
         border: 0;
         flex: 1;
@@ -476,13 +524,26 @@ footer {
         width: 95%;
         height: 450px;
     }
+    /* change text padding for project label text */
+    #work article .project-label h3 {
+        padding: 15px 20px 15px 15px;
+        font-size: 1.5rem;
+    }
+        /* change text size */
+    #work article .project-label h4 {
+        font-size: 1.1rem;
+    }
+        /* change max width for label expansion */
+    #work article:hover .project-label h4 {
+        width: 870px;
+    }
 
     /* Contact - change layout to size by side articles */
     #contact aside {
         justify-content: space-evenly;
     }
-        /* change size of articles */
-    #contact article {
+    /* change size of articles */
+    #contact a {
         width: 20%;
         margin: 8px;
     }
