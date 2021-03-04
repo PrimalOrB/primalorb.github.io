@@ -170,7 +170,7 @@ section h2:not(#hero h2) {
     padding-top: 0.5em;
 }
     /* vcenter section paragraphs, not about (to be top)*/
-section p:not(#about p) {
+section p:not(#about p){
     flex: 1;
     display: flex;
     justify-content: left;
@@ -373,7 +373,63 @@ section p:not(#about p) {
 #contact i {
     font-size: 30px;
 }
-    /* Phone text size smaller */
+
+/* Resume */
+#resume .group h2 {
+    font-size: 1.3rem;
+    width: auto;
+}
+
+#resume .group h2:nth-of-type(2) {
+    border-top: 1px solid var(--white-fade-soft);
+}
+
+#resume article {
+    display: block;
+    padding: 0 1rem;
+    padding-bottom: 0.75rem;
+}
+
+#resume .resume-head {
+    font-size: 1rem;
+}
+
+#resume .resume-subhead {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#resume .resume-title{
+    flex: 0 auto;
+    font-style: italic;
+    padding: 0;
+    margin-left: 1rem;
+    font-size: 0.9rem;;
+}
+
+#resume .resume-date {
+    flex: 1;
+    font-style: italic;
+    font-size: 0.8rem;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+#resume .resume-detail {
+    margin-left: 3rem;
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+#resume li {
+    list-style-type: circle;
+    font-size: 0.9em;
+    line-height: 1.3;
+}
+
+/* Phone text size smaller */
 #Phone p {
     font-size: 0.9rem;
     /* align-content: center; */
@@ -433,14 +489,14 @@ footer p {
     }
 
     /* Sections - reposition flex sections (not work section as it has a different break point)*/
-    section h2:not(#hero h2):not(.work-flex h2) {
+    section h2:not(#hero h2):not(.work-flex h2):not(#resume .group h2) {
         flex: 1;
         text-align: right;
         padding-right: 30px;
         padding-top: 0;
         border-right: 5px solid var(--white-fade-hard);
     }
-    section p:not(#about p)  {
+    #resume div {
         flex: 3;
     }
 
@@ -455,8 +511,8 @@ footer p {
         height: 250px;
     }
 
-    /* About */
-    #about .group {
+    /* About and resume rescaling*/
+    #about .group, #resume .group {
         flex: 3;
         padding: 0 15px;
     }
