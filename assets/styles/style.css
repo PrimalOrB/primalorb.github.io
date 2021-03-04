@@ -485,11 +485,11 @@ footer p {
     /* change text padding for project label text */
     #work li .project-label h3 {
         padding: 10px 20px 10px 15px;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
         /* change text size */
      #work li .project-label div {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
         /* change max width for label expansion */
     #work li:hover .project-label div {
@@ -615,11 +615,11 @@ footer p {
     /* change text padding for project label text */
     #work li .project-label h3 {
         padding: 15px 0 15px 15px;
-        font-size: 1.2rem;
+        font-size: 1.0rem;
     }
         /* change text size */
     #work li .project-label div {
-        font-size: .9rem;
+        font-size: .8rem;
     }
         /* change max width for label expansion */
     #work li:hover .project-label div {
