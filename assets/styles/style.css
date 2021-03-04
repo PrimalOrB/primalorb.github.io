@@ -144,13 +144,17 @@ header nav ul li a:hover, #contact a:hover {
     background-color: var(--white-fade-hard);
     box-shadow: 0 0 5px 2px var(--shadow);
 }
-header nav ul li a:active, #contact a:active, #contact a p:active {
+    /* acrtive state change background color */
+header nav ul li a:active, #contact a:active {
     background-color: var(--text-color);
     color: var(--white-fade-hard);
     border-radius: 10px;
     outline: none;
+} 
+    /* Active state change letter and icon color */
+    #contact a:active p , #contact a:active i {
+    color: white
 }
-
 
 /* Sections - general rules to apply to sections */
 section {
