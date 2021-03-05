@@ -49,14 +49,10 @@
                 <!-- title for about area -->
                 <h2>about me</h2>
                 <div class="group">
-                    <p>Welcome to my portfolio and thank you for visiting. My name is Andrew Ogilvie and this is 
-                        my platform to showcase the knowledge I have applied, and to make meaningful networking 
-                        connections with my visitors. </br> Please visit my work examples and history below, and find my contact information
-                    and professional connection methods.</p>
-                    
+                    <p>Welcome to my portfolio and thank you for visiting. My name is Andrew Ogilvie and this is my platform to showcase the knowledge I have applied, and to make meaningful networking connections with my visitors. </br> Please visit my work examples and history below, and find my contact information and professional connection methods.</p>
                     <div>
                         <img src="https://user-images.githubusercontent.com/69044956/109425982-113c3080-79b9-11eb-89eb-07723ddd6c18.jpg"
-                            alt="Andrew Ogilvie">
+                            alt="Andrew Ogilvie wearing sunglasses and smiling in front of the Montreal Biosphere">
                     </div>
                 </div>
             </section>
@@ -74,49 +70,49 @@
                 <ul class="group">
                     <!-- each project -->
                     <li>
-                        <a href="https://primalorb.github.io/" target="_blank">
+                        <!-- link and label for screen readers -->
+                        <a href="https://primalorb.github.io/" target="_blank" aria-label="Portfolio">
                             <!-- project image container and keep image scale effect from overflowing -->
-                            <div class="project-label">
+                            <!-- screen reader role set to none to the page reads properly -->
+                            <div class="project-label" role="none">
                                 <!-- project title -->
-                                <h3>Portfolio</h3>
+                                <!-- aria hidden and role none so it does not get read twice -->
+                                <h3 role="none" aria-hidden="true">Portfolio</h3>
                                 <!-- project description -->
                                 <div>HTML / CSS / Three.js</div>
                             </div>
                             <!-- text area which displays upon hovering -->
-                            <span class="project-desc">A mobile-first responsive design, incorporating HTML, CSS,
-                                Flexbox, and Three.js. Accessibility has been considered in every aspect of design, to
-                                make the finished product as friendly as possible to all users.</span>
+                            <span class="project-desc">A mobile-first responsive design, incorporating HTML, CSS, Flexbox, and Three.js. Accessibility has been considered in every aspect of design, to make the finished product as friendly as possible to all users.</span>
                             <img src="./assets/images/portfolio.png" alt="three men discussing post it notes on a white board">
                             <!-- Royalty free image https://unsplash.com/photos/wD1LRb9OeEo -->
                         </a>
                     </li>
-                    <li>
-                        <div class="project-label">
-                            <h3>Password Generator</h3>
-                            <div>JavaScript</div>
-                        </div>
-                        <span class="project-desc">JavaScript password generator allowing a user to define their own
-                            included criteria for their desired output. *** This project is just a placeholder at this time</span>
-                        <img src="./assets/images/password-generator.png" alt="a cell phone with a lock on the screen with the word secured">
-                        <!-- Royalte free image https://unsplash.com/photos/ah-HeguOe9k -->
+                    <li id="Password Generator">
+                        <a href="https://primalorb.github.io/" target="_blank" aria-label="Password Generator">
+                            <div class="project-label" role="none">
+                                <h3 role="none" aria-hidden="true">Password Generator</h3>
+                                <div>JavaScript</div>
+                            </div>
+                            <span class="project-desc">JavaScript password generator allowing a user to define their own included criteria for their desired output. *** This project is just a placeholder at this time</span>
+                            <img src="./assets/images/password-generator.png" alt="a cell phone with a lock on the screen with the word secured">
+                            <!-- Royalte free image https://unsplash.com/photos/ah-HeguOe9k -->
+                        </a>
                     </li>
                     <li>
-                        <a href="https://primalorb.github.io/run-buddy" target="_blank">
-                            <div class="project-label">
-                                <h3>Run Buddy</h3>
+                        <a href="https://primalorb.github.io/run-buddy" target="_blank" aria-label="Run Buddy">
+                            <div class="project-label" role="none">
+                                <h3 role="none" aria-hidden="true">Run Buddy</h3>
                                 <div>HTML / CSS</div>
                             </div>
-                            <span class="project-desc">An attractive and functional website for the fictional personal
-                                trainer company "Run Buddy". Responsive design and symantic HTML provide a strong base
-                                to this project.</span>
+                            <span class="project-desc">An attractive and functional website for the fictional personal trainer company "Run Buddy". Responsive design and symantic HTML provide a strong base to this project.</span>
                             <img src="./assets/images/run-buddy.png" alt="woman crossing the finish line of a marathon with her hands in the air">
                         <!-- Royalty free image https://unsplash.com/photos/KR3TZJS5u1o -->
                         </a>
                     </li>
                     <li>
-                        <a href="https://primalorb.github.io/rock-paper-scissors/" target="_blank">
-                        <div class="project-label">
-                            <h3>Rock Paper Scissors</h3>
+                        <a href="https://primalorb.github.io/rock-paper-scissors/" target="_blank" aria-label="Rock Paper Scissors">
+                        <div class="project-label" role="none">
+                            <h3 role="none" aria-hidden="true">Rock Paper Scissors</h3>
                             <div>JavaScript</div>
                         </div>
                         <span class="project-desc">A three turn game of rock paper scissors utilizing randomized choices for your opponent, and score reporting at the end of the rounds</span>
@@ -125,14 +121,12 @@
                     </a>
                     </li>
                     <li>
-                        <a href="https://primalorb.github.io/robot-gladiators/" target="_blank">
-                            <div class="project-label">
-                                <h3>Robot Gladiators</h3>
+                        <a href="https://primalorb.github.io/robot-gladiators/" target="_blank" aria-label="Robot Gladiators">
+                            <div class="project-label" role="none">
+                                <h3 role="none" aria-hidden="true">Robot Gladiators</h3>
                                 <div>JavaScript</div>
                             </div>
-                            <span class="project-desc">A JavaScipt only game; utilizing window prompts, alerts, and
-                                confirms; where your character has the opportunity to battle opponents. Player and enemy
-                                attributes are considered, and your high score is stored.</span>
+                            <span class="project-desc">A JavaScript only game; utilizing window prompts, alerts, and confirms; where your character has the opportunity to battle opponents. Player and enemyattributes are considered, and your high score is stored.</span>
                             <img src="./assets/images/robot-gladiators.png" alt="red and white robots locked in a fight with swords">
                             <!-- Royalty free image https://unsplash.com/photos/od3F8UT0YAI -->
                         </a>
