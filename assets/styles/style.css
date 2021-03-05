@@ -1,638 +1,748 @@
-/* Root - adding color variables */ 
+/* Root - adding color variables */
 :root {
-    --primary-color: rgba(168,201,230,1);
-    --secondary-color: rgba(84,64,64,1);
-    --white-full: rgba(255, 255, 255, 1);
-    --white-fade-hard: rgba(255, 255, 255, 0.75);
-    --white-fade-soft: rgba(255, 255, 255, 0.25);
-    --gray:  rgba(180, 180, 180, 1);
-    --gray-fade-hard: rgba(180, 180, 180, 0.75);
-    --text-color: hsl(208, 38%, 35%, 1);
-    --text-color-alt: hsl(208, 38%, 25%, 1);
-    --text-color-fade: hsl(208, 38%, 35%, .6);
-    --shadow: rgba(0, 0, 0, 0.2);
+  --primary-color: rgba(168, 201, 230, 1);
+  --secondary-color: rgba(84, 64, 64, 1);
+  --white-full: rgba(255, 255, 255, 1);
+  --white-fade-hard: rgba(255, 255, 255, 0.75);
+  --white-fade-soft: rgba(255, 255, 255, 0.25);
+  --gray: rgba(180, 180, 180, 1);
+  --gray-fade-hard: rgba(180, 180, 180, 0.75);
+  --text-color: hsl(208, 38%, 35%, 1);
+  --text-color-alt: hsl(208, 38%, 25%, 1);
+  --text-color-fade: hsl(208, 38%, 35%, 0.6);
+  --shadow: rgba(0, 0, 0, 0.2);
 }
 
 /* All  - initial settings for all page elements*/
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--text-color)
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
 }
 
 /* Scroll padding to prevent overlapping with the sticky header, and smooth transition */
 html {
-    scroll-padding-top: 120px;
-    scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+  scroll-behavior: smooth;
 }
 
 /* Body - background and font size*/
 body {
-    background:var(--primary-color);
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-position: 50%;
-    font-size: 1.25rem;
+  background: var(--primary-color);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-position: 50%;
+  font-size: 1.25rem;
 }
 
 /* Container - containing element of the body to fade over background, more prevalent in wider desktop displays */
 .container {
-    background-color: var(--white-fade-soft);
+  background-color: var(--white-fade-soft);
 }
 
 /* Headings - uppercase transformation of headings*/
-h1, h2, h3 {
-    text-transform: uppercase;
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
 }
-    /* add shadow to title H1 and span */
-header h1, span {
-    transition: 0.5s ease;
+/* add shadow to title H1 and span */
+header h1,
+span {
+  transition: 0.5s ease;
 }
-    /* span selector for different color last */
+/* span selector for different color last */
 h1 span {
-    color: var(--text-color-alt);
+  color: var(--text-color-alt);
 }
 /* Remove underline from header title link, transition on anchor for scale and shared shadow  */
 header a {
-    text-decoration: none;
-    transition: 0.5s ease;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  transition: 0.5s ease;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
 }
-    /* change text color on hover */
-header a:hover h1, header a:hover span {
-    color: var(--text-color-fade);
-}    
-    /* change text color on hover */
-header a:active h1, header a:active span {
-    color: var(--white-full);
+/* change text color on hover */
+header a:hover h1,
+header a:hover span {
+  color: var(--text-color-fade);
 }
-    /* change scale and shadow on hover */
+/* change text color on hover */
+header a:active h1,
+header a:active span {
+  color: var(--white-full);
+}
+/* change scale and shadow on hover */
 header a:hover {
-    transform: scale(1.05);
-    color: var(--text-color-fade);
-    text-shadow: 0px 0px 6px var(--white-fade-hard);
+  transform: scale(1.05);
+  color: var(--text-color-fade);
+  text-shadow: 0px 0px 6px var(--white-fade-hard);
 }
-    /* Add margin to bottom of section h2s to give vertical space between the sections */
+/* Add margin to bottom of section h2s to give vertical space between the sections */
 section h2 {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-    /* Add lines between sections using ::before pseudo selector */
-#work::before, #contact::before, #resume::before, footer::before{
-    content: "";
-    display: inline-block;
-    width: 95%;
-    border-top: 2px solid var(--white-fade-hard)
+/* Add lines between sections using ::before pseudo selector */
+#work::before,
+#contact::before,
+#resume::before,
+footer::before {
+  content: "";
+  display: inline-block;
+  width: 95%;
+  border-top: 2px solid var(--white-fade-hard);
 }
 
 /* Header  - flex layout, sticky, and shared background with the body*/
 header {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background:var(--primary-color);
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-position: 0%;
-    border-bottom: 2px solid var(--white-full);
-    /* CSS only method to overlay transparency over background image https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image */
-    box-shadow: inset 0 0 0 1000px var(--white-fade-soft); 
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: var(--primary-color);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-position: 0%;
+  border-bottom: 2px solid var(--white-full);
+  /* CSS only method to overlay transparency over background image https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image */
+  box-shadow: inset 0 0 0 1000px var(--white-fade-soft);
 }
-    /* full width of containing element */
+/* full width of containing element */
 header section {
-    width: 100%;
+  width: 100%;
 }
 
 /* Nav - section within the header*/
 header section {
-    padding-bottom: 0;
-    margin-top: 1em;
+  padding-bottom: 0;
+  margin-top: 1em;
 }
-    /* full width of containing element */
+/* full width of containing element */
 header nav {
-    width: 100%
+  width: 100%;
 }
-    /* flex list to distribute li elements */
+/* flex list to distribute li elements */
 header nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin-bottom: 1rem;
 }
-    /* styling of nav li a elements */
+/* styling of nav li a elements */
 header nav ul li a {
-    padding: 5px 15px;
-    text-decoration: none;
-    font-size: 4vw;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--white-fade-soft);
-    font-weight: bold;
-    transition: 0.25s ease;
+  padding: 5px 15px;
+  text-decoration: none;
+  font-size: 4vw;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--white-fade-soft);
+  font-weight: bold;
+  transition: 0.25s ease;
 }
-    /* Style button states for nav and contact*/
-header nav ul li a:hover, #contact a:hover {
-    background-color: var(--white-fade-hard);
-    box-shadow: 0 0 5px 2px var(--shadow);
+/* Style button states for nav and contact*/
+header nav ul li a:hover,
+#contact a:hover {
+  background-color: var(--white-fade-hard);
+  box-shadow: 0 0 5px 2px var(--shadow);
 }
-header nav ul li a:active, #contact a:active, #contact a p:active {
-    background-color: var(--text-color);
-    color: var(--white-fade-hard);
-    border-radius: 10px;
-    outline: none;
+/* acrtive state change background color */
+header nav ul li a:active,
+#contact a:active {
+  background-color: var(--text-color);
+  color: var(--white-fade-hard);
+  border-radius: 10px;
+  outline: none;
 }
-
+/* Active state change letter and icon color */
+#contact a:active p,
+#contact a:active i {
+  color: white;
+}
 
 /* Sections - general rules to apply to sections */
 section {
-    margin: 15px 0 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin: 15px 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-    /* section titles (except for hero) */
+/* section titles (except for hero) */
 section h2:not(#hero h2) {
-    width: 100%;
-    text-align: center;
-    padding-top: 0.5em;
+  width: 100%;
+  text-align: center;
+  padding-top: 0.5em;
 }
-    /* vcenter section paragraphs, not about (to be top)*/
+/* vcenter section paragraphs, not about (to be top)*/
 section p:not(#about p) {
-    flex: 1;
-    display: flex;
-    justify-content: left;
-    padding: 0 15px;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  padding: 0 15px;
+  align-items: center;
 }
 
 /* Hero - element containing threejs canvas*/
 #hero {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
-    /* text overlay of canvas element */
+/* text overlay of canvas element */
 #hero h2 {
-    position: absolute;
-    display: flex;
-    bottom: 20px;
-    width: 100%;
-    height: 50px;
-    color: var(--text-color-fade);
-    font-family: 'Courier New', Courier, monospace;
-    font-style: italic;
-    font-size: 1.5rem;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 25px;
-    background: linear-gradient(270deg, var(--white-fade-hard) 0%, var(--white-fade-soft) 100%);
+  position: absolute;
+  display: flex;
+  bottom: 20px;
+  width: 100%;
+  height: 50px;
+  color: var(--text-color-fade);
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 25px;
+  background: linear-gradient(
+    270deg,
+    var(--white-fade-hard) 0%,
+    var(--white-fade-soft) 100%
+  );
 }
 
-    /* container for threejs element */
+/* container for threejs element */
 .canvas {
-    width: 100%;
-    height: 150px;
-    border-bottom: 2px solid var(--white-full);
+  width: 100%;
+  height: 150px;
+  border-bottom: 2px solid var(--white-full);
 }
 
 /* About - no specific rules needed*/
 #about .group {
-    width: 95%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: top;
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: top;
 }
 #about .group p {
-    width: 100%;
+  width: 100%;
 }
-    /* image container div */
+/* image container div */
 #about .group div {
-    flex-basis: 200px;
-    margin-top: 15px;
-    margin-left: 15px;
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 10px;
+  flex-basis: 200px;
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
 }
-    /* image fit by width (assuming portrait photo) */
+/* image fit by width (assuming portrait photo) */
 #about img {
-    width: 100%;
-    object-fit: cover;
-    position: center;
-    filter: brightness(1.2)
+  width: 100%;
+  object-fit: cover;
+  position: center;
+  filter: brightness(1.2);
 }
 
 /* Work - flex initial layout for mobile is wide, with more height for the first project*/
 .work-flex {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
-    /* container element for the project articles */
+/* container element for the project articles */
 #work .group {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-    /* each project article */
+/* each project article */
 #work li {
-    width: 90%;
-    height: 125px;
-    position: relative;
-    margin-top: 15px;
-    border: 2px solid var(--white-full);
-    overflow: hidden;
+  width: 90%;
+  height: 125px;
+  position: relative;
+  margin-top: 15px;
+  border: 2px solid var(--white-full);
+  overflow: hidden;
+  border-radius: 10px;
 }
-    /* remove top margin from first li */
+/* remove top margin from first li */
 #work li:first-of-type {
-    margin-top: 0;
+  margin-top: 0;
 }
 
-    /* override for first project size */
+/* override for first project size */
 #work li:first-of-type {
-    height: 250px;
+  height: 250px;
 }
-    /* label for projects which can flex dynamically and show/hide the extra description text */
+/* label for projects which can flex dynamically and show/hide the extra description text */
 #work li .project-label {
-    max-width: calc(100% - 20px);
-    position: absolute;
-    bottom: 15px;
-    display: flex;
-    background-color: var(--white-fade-hard);
-    z-index: 555;
-    border-radius: 0 10px 10px 0;
-    border-width: 1px 1px 1px 0;
-    border-style: solid;
-    border-color: var(--white-full);
-    
+  max-width: calc(100% - 20px);
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  background-color: var(--white-fade-hard);
+  z-index: 555;
+  border-radius: 0 10px 10px 0;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: var(--white-full);
+  box-shadow: 1px 2px 5px 2px var(--shadow);
 }
-    /* primary label does not change flex properties*/
+/* primary label does not change flex properties*/
 #work li .project-label h3 {
-    padding: 8px 20px 8px 15px;
-    width: auto;
-    flex-basis: auto;
-    flex-grow: 1;
-    white-space: nowrap;
-    font-size: 1rem;
-    box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0);
-    transition: 0.75s ease;
+  padding: 8px 20px 8px 15px;
+  width: auto;
+  flex-basis: auto;
+  flex-grow: 1;
+  white-space: nowrap;
+  font-size: 1rem;
+  box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0);
+  transition: 0.75s ease;
 }
-    /* extra description initial state is zero opacity and zero width */
+/* extra description initial state is zero opacity and zero width */
 #work li .project-label div {
-    display: flex;
-    align-items: center;
-    width: 0;
-    min-width: 0;
-    overflow: hidden;
-    justify-content: flex-end;
-    flex-grow: 0;
-    transition: 0.75s ease;
-    font-size: .9em;
-    font-style: italic;
-    opacity: 0;
-    color: var(--text-color-alt);
-    white-space: nowrap;
-    padding-right: 20px;
-    font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  justify-content: flex-end;
+  flex-grow: 0;
+  transition: 0.75s ease;
+  font-size: 0.9em;
+  font-style: italic;
+  opacity: 0;
+  color: var(--text-color-alt);
+  white-space: nowrap;
+  padding-right: 20px;
+  font-size: 0.8rem;
 }
-    /* hover makes background opaque */
+
+/* test area which is hidden during initial state, and is faded in when hovering */
+#work li span {
+  background-color: rgba(200, 200, 200, 00);
+  color: rgba(200, 200, 200, 00);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 333;
+  padding: 40px 10%;
+  font-size: 0.8em;
+  font-style: italic;
+  transition: 1s ease;
+  text-align: center;
+}
+#work li:hover span {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: var(--text-color);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+/* hover makes background opaque */
 #work li:hover .project-label {
-    background-color: var(--white-full);
-    box-shadow: 1px 2px 5px 2px var(--shadow);
+  background-color: var(--white-full);
+  box-shadow: 1px 2px 5px 2px var(--shadow);
 }
-    /* active makes background color change */
-#work li:active .project-label{
-    background-color: var(--text-color-alt);
+/* active makes background color change */
+#work li:active .project-label {
+  background-color: var(--text-color-alt);
 }
-    /* active changes text color */
-#work li:active .project-label h3, #work li:active .project-label div{
-    color: var(--white-full)
+/* active changes text color */
+#work li:active .project-label h3,
+#work li:active .project-label div {
+  color: var(--white-full);
 }
-    /* hover adjusts flex properties, width, and opacity to expand */
+/* hover adjusts flex properties, width, and opacity to expand */
 #work li:hover .project-label div {
-    width: 700px;
-    flex-grow: 1;
-    opacity: 1;
+  width: 700px;
+  flex-grow: 1;
+  opacity: 1;
 }
-    /* img for project */
+/* img for project */
 #work li img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    overflow: hidden;
-    transition: 0.75s ease;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: 0.75s ease;
 }
-    /* Hover effects for the image */
+/* Hover effects for the image */
 #work li:hover img {
-    transform: scale(1.1);
-    filter: blur(2px) saturate(.15) brightness(1.1);
+  transform: scale(1.1);
+  filter: blur(2px) saturate(0.15) brightness(1.1);
 }
 
 /* Contact - flex for contact area children*/
 #contact aside {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-    /* each contact elemennt */
+/* each contact elemennt */
 #contact a {
-    width: 40%;
-    display: flex;
-    margin: 15px;
-    background-color: var(--white-fade-soft);
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.5s ease;
+  width: 40%;
+  display: flex;
+  margin: 15px;
+  background-color: var(--white-fade-soft);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.5s ease;
 }
-    /* container to hold contact element img */
-#contact div{
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* container to hold contact element img */
+#contact div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-    /* Font Awesome Logos */
+/* Font Awesome Logos */
 #contact i {
-    font-size: 30px;
+  font-size: 30px;
 }
-    /* Phone text size smaller */
+
+/* Resume */
+#resume .group h2 {
+  font-size: 1.3rem;
+  width: auto;
+}
+
+#resume .group h2:nth-of-type(2) {
+  border-top: 1px solid var(--white-fade-soft);
+}
+
+#resume article {
+  display: block;
+  padding: 0 1rem;
+  padding-bottom: 0.75rem;
+}
+
+#resume .resume-head {
+  font-size: 1rem;
+}
+
+#resume .resume-subhead {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#resume .resume-title {
+  flex: 0 auto;
+  font-style: italic;
+  padding: 0;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+}
+
+#resume .resume-date {
+  flex: 1;
+  font-style: italic;
+  font-size: 0.8rem;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+#resume .resume-detail {
+  margin-left: 3rem;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+#resume li {
+  list-style-type: circle;
+  font-size: 0.9em;
+  line-height: 1.3;
+}
+
+/* Phone text size smaller */
 #Phone p {
-    font-size: 0.9rem;
-    /* align-content: center; */
- }
+  font-size: 0.9rem;
+  /* align-content: center; */
+}
 
 /* Footer - footer element*/
 footer {
-    display:inline-block;
-    width: 100%;
-    text-align: center;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 footer p {
-    padding: 10px 0;
-    font-size: small;
-    text-transform: uppercase;
+  padding: 10px 0;
+  font-size: small;
+  text-transform: uppercase;
 }
 
 /* Tablet Size Media Query*/
 @media screen and (min-width: 768px) {
-    /* adjust scroll padding */
-    html {
-        scroll-padding-top: 78px;
-    }   
+  /* adjust scroll padding */
+  html {
+    scroll-padding-top: 78px;
+  }
 
-    /* Body - reduce font size slightly*/
-    body {
-        font-size: 1.15rem;
-    }
-        /* remove bottom margin from h2 (not the work area, as it has a different break point) */
-    h2:not(.work-flex h2) {
-        margin-bottom: 0;
-    }
-        /* Remove lines between sections using ::before pseudo selector */
-    #contact::before, #resume::before{
-        content: none;
-    }
+  /* Body - reduce font size slightly*/
+  body {
+    font-size: 1.15rem;
+  }
+  /* remove bottom margin from h2 (not the work area, as it has a different break point) */
+  h2:not(.work-flex h2) {
+    margin-bottom: 0;
+  }
+  /* Remove lines between sections using ::before pseudo selector */
+  #contact::before,
+  #resume::before {
+    content: none;
+  }
 
-    /* Header and Nav - reposition header section as side by side */
-    header section {
-        flex: 2;
-        justify-content: left;
-        padding-left: 1em;
-    }
-    header nav {
-        flex: 3;
-        display: flex;
-        align-items: center;
-        margin-right: 15px;
-    }
-    header nav ul {
-        width: 100%;
-        margin-bottom: 0;
-    }
-    header nav ul li a{
-        font-size: 1.25rem;
-    }
+  /* Header and Nav - reposition header section as side by side */
+  header section {
+    flex: 2;
+    justify-content: left;
+    padding-left: 1em;
+  }
+  header nav {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+  header nav ul {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  header nav ul li a {
+    font-size: 1.25rem;
+  }
 
-    /* Sections - reposition flex sections (not work section as it has a different break point)*/
-    section h2:not(#hero h2):not(.work-flex h2) {
-        flex: 1;
-        text-align: right;
-        padding-right: 30px;
-        padding-top: 0;
-        border-right: 5px solid var(--white-fade-hard);
-    }
-    section p:not(#about p)  {
-        flex: 3;
-    }
+  /* Sections - reposition flex sections (not work section as it has a different break point)*/
+  section h2:not(#hero h2):not(.work-flex h2):not(#resume .group h2) {
+    flex: 1;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 0;
+    border-right: 5px solid var(--white-fade-hard);
+  }
+  #resume div {
+    flex: 3;
+  }
 
-    /* Hero - reposition the floating text element */
-    #hero h2 {
-        bottom: 30px;
-        font-size: 2.3rem;
-        padding-right: 50px;
-    }
-        /* increase canvas height */
-    .canvas {
-        height: 250px;
-    }
+  /* Hero - reposition the floating text element */
+  #hero h2 {
+    bottom: 30px;
+    font-size: 2.3rem;
+    padding-right: 50px;
+  }
+  /* increase canvas height */
+  .canvas {
+    height: 250px;
+  }
 
-    /* About */
-    #about .group {
-        flex: 3;
-        padding: 0 15px;
-    }
-    #about .group p {
-        width: auto;
-        flex: 1;
-    }
-    #about .group div {
-        margin-right: 0;
-    }
- 
-    /* Work - reposition the h2 to align with other sections*/
-    #work h2:not(#hero h2) {
-        flex: 1;
-        text-align: right;
-        padding-right: 30px;
-     }
-        /* p element is an empty element to assist with flex alignment */
-    .work-flex p {
-        flex: 3;
-     }
-        /* resize project elements */
-    #work li {
-        height: 200px;
-    }
-        /* resize first project element */
-    #work li:first-of-type {
-        height: 400px;
-    }
-    /* change text padding for project label text */
-    #work li .project-label h3 {
-        padding: 10px 20px 10px 15px;
-        font-size: 1.3rem;
-    }
-        /* change text size */
-     #work li .project-label div {
-        font-size: 1rem;
-    }
-        /* change max width for label expansion */
-    #work li:hover .project-label div {
-        width: 870px;
-    }
+  /* About and resume rescaling*/
+  #about .group,
+  #resume .group {
+    flex: 3;
+    padding: 0 15px;
+  }
+  #about .group p {
+    width: auto;
+    flex: 1;
+  }
+  #about .group div {
+    margin-right: 0;
+  }
 
-    /* Contact */
-    #contact aside {
-        flex: 3;
-        padding: 0 15px;
-    }
-        /* reposition contact elements */
-    #contact article p{
-        flex: 3;
-    }
+  /* Work - reposition the h2 to align with other sections*/
+  #work h2:not(#hero h2) {
+    flex: 1;
+    text-align: right;
+    padding-right: 30px;
+  }
+  /* p element is an empty element to assist with flex alignment */
+  .work-flex p {
+    flex: 3;
+  }
+  /* resize project elements */
+  #work li {
+    height: 200px;
+  }
+  /* resize first project element */
+  #work li:first-of-type {
+    height: 400px;
+  }
+  /* change text padding for project label text */
+  #work li .project-label h3 {
+    padding: 10px 20px 10px 15px;
+    font-size: 1.2rem;
+  }
+  /* change text size */
+  #work li .project-label div {
+    font-size: 0.9rem;
+  }
+  /* change max width for label expansion */
+  #work li:hover .project-label div {
+    width: 870px;
+  }
+
+  /* Contact */
+  #contact aside {
+    flex: 3;
+    padding: 0 15px;
+  }
+  /* reposition contact elements */
+  #contact article p {
+    flex: 3;
+  }
 }
 
 /* Desktop Size Media Query */
 @media screen and (min-width: 980px) {
-    /* adjust scroll padding */
-    html {
-        scroll-padding-top: 85px;
-    } 
+  /* adjust scroll padding */
+  html {
+    scroll-padding-top: 85px;
+  }
 
-    /* Body - make body a flex to center the container */
-    body {
-        display: flex;
-        justify-content: center;
-        font-size: 1.1rem;
-    }
-        /* larger title and position change */
-    h1 {
-        font-size: 2.5rem;
-        padding-left: 50px;
-    }
-        /* larger h2 */
-    h2 {
-        font-size: 2rem;
-    }
+  /* Body - make body a flex to center the container */
+  body {
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+  /* larger title and position change */
+  h1 {
+    font-size: 2.5rem;
+    padding-left: 50px;
+  }
+  /* larger h2 */
+  h2 {
+    font-size: 2rem;
+  }
 
-    /* Container - main page container moved to centre of page when it is larger than max-width*/
-    .container {
-        max-width: 1200px;
-        border-left: 5px solid var(--white-full);
-        border-right: 5px solid var(--white-full);
-        box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
-    }
+  /* Container - main page container moved to centre of page when it is larger than max-width*/
+  .container {
+    max-width: 1200px;
+    border-left: 5px solid var(--white-full);
+    border-right: 5px solid var(--white-full);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
+  }
 
-    /* Header and nav - reposition slightly */
-    header section {
-        flex: 4;
-        justify-content: left;
-    }
-    header nav {
-        flex: 3;
-    }
-    header nav ul li a {
-        font-size: 1.2rem;
-    }
+  /* Header and nav - reposition slightly */
+  header section {
+    flex: 4;
+    justify-content: left;
+  }
+  header nav {
+    flex: 3;
+  }
+  header nav ul li a {
+    font-size: 1.2rem;
+  }
 
-    /* Canvas - change canvas size*/
-    .canvas {
-        height: 350px;
-    }
+  /* Canvas - change canvas size*/
+  .canvas {
+    height: 350px;
+  }
 
-    /* Sections - increase vertical space */
-    section:not(header section) {
-        margin: 50px 0 50px;
-    }
+  /* Sections - increase vertical space */
+  section:not(header section) {
+    margin: 50px 0 50px;
+  }
 
-        /* image container div */
-    #about .group div {
-        margin-right: 15px;
-    }
+  /* image container div */
+  #about .group div {
+    margin-right: 15px;
+  }
 
-    /* Work  - bring work into same style as other sections*/
-    #work h2:not(#hero h2) {
-        padding-top: 0;
-        padding-right: 0;
-    }
+  /* Work  - bring work into same style as other sections*/
+  #work h2:not(#hero h2) {
+    padding-top: 0;
+    padding-right: 0;
+  }
 
-    .work-flex {
-        border: 0;
-        flex: 1;
-        padding-top: 0;
-        display: block;
-        padding-right: 30px;
-        border-right: 5px solid var(--white-fade-hard);
-    }
-        /* fix h2 */
-    #work h2 {
-        flex: none;
-        text-align: right;
-        padding: 0;
-        margin: 0;
-        height: 100%
-    }
-        /* Remove lines between sections using ::before pseudo selector */
-    #work::before{
-        content: none;
-    }
-        /* fix placeholder p tag */
-    #work p {
-        flex: none;
-        padding: 0;
-        width: 0
-    }
-        /* match flex of other sections */
-    #work .group {
-        flex: 3;
-        padding: 0 15px;
-    }
-        /* enable side-by side appropriate flex sizes */
-    #work li {
-        width: 45%;
-        height: 300px;
-    }
-        /* resize first element */
-    #work li:first-of-type {
-        width: 95%;
-        height: 450px;
-    }
-    /* change text padding for project label text */
-    #work li .project-label h3 {
-        padding: 15px 0 15px 15px;
-        font-size: 1.2rem;
-    }
-        /* change text size */
-    #work li .project-label div {
-        font-size: .9rem;
-    }
-        /* change max width for label expansion */
-    #work li:hover .project-label div {
-        width: 870px;
-    }
+  .work-flex {
+    border: 0;
+    flex: 1;
+    padding-top: 0;
+    display: block;
+    padding-right: 30px;
+    border-right: 5px solid var(--white-fade-hard);
+  }
+  /* fix h2 */
+  #work h2 {
+    flex: none;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+  /* Remove lines between sections using ::before pseudo selector */
+  #work::before {
+    content: none;
+  }
+  /* fix placeholder p tag */
+  #work p {
+    flex: none;
+    padding: 0;
+    width: 0;
+  }
+  /* match flex of other sections */
+  #work .group {
+    flex: 3;
+    padding: 0 15px;
+  }
+  /* enable side-by side appropriate flex sizes */
+  #work li {
+    width: 45%;
+    height: 300px;
+  }
+  /* resize first element */
+  #work li:first-of-type {
+    width: 95%;
+    height: 450px;
+  }
+  /* change text padding for project label text */
+  #work li .project-label h3 {
+    padding: 15px 0 15px 15px;
+    font-size: 1rem;
+  }
+  /* change text size */
+  #work li .project-label div {
+    font-size: 0.8rem;
+  }
+  /* change max width for label expansion */
+  #work li:hover .project-label div {
+    width: 870px;
+  }
 
-    /* Contact - change layout to size by side articles */
-    #contact aside {
-        justify-content: space-evenly;
-    }
-    /* change size of articles */
-    #contact a {
-        width: 20%;
-        margin: 8px;
-    }
+  /* Contact - change layout to size by side articles */
+  #contact aside {
+    justify-content: space-evenly;
+  }
+  /* change size of articles */
+  #contact a {
+    width: 20%;
+    margin: 8px;
+  }
 }
