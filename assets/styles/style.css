@@ -242,7 +242,9 @@ section p:not(#about p) {
 }
 #about .group p {
   width: 100%;
+  line-height: 1.5;
 }
+
 /* image container div */
 #about .group div {
   flex-basis: 200px;
@@ -252,6 +254,7 @@ section p:not(#about p) {
   height: 200px;
   overflow: hidden;
   border-radius: 10px;
+  border: 2px solid var(--white-full);
 }
 /* image fit by width (assuming portrait photo) */
 #about img {
