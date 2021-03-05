@@ -242,7 +242,9 @@ section p:not(#about p) {
 }
 #about .group p {
   width: 100%;
+  line-height: 1.5;
 }
+
 /* image container div */
 #about .group div {
   flex-basis: 200px;
@@ -252,6 +254,7 @@ section p:not(#about p) {
   height: 200px;
   overflow: hidden;
   border-radius: 10px;
+  border: 2px solid var(--white-full);
 }
 /* image fit by width (assuming portrait photo) */
 #about img {
@@ -421,34 +424,39 @@ section p:not(#about p) {
 #contact i {
   font-size: 30px;
 }
+/* Phone text size smaller */
+#Phone p {
+  font-size: 0.9rem;
+  /* align-content: center; */
+}
 
 /* Resume */
 #resume .group h2 {
   font-size: 1.3rem;
   width: auto;
 }
-
-#resume .group h2:nth-of-type(2) {
+/* lines between primary categories */
+#resume .group h2:not(#resume .group h2:first-of-type) {
   border-top: 1px solid var(--white-fade-soft);
 }
-
+/* each primary article */
 #resume article {
   display: block;
   padding: 0 1rem;
   padding-bottom: 0.75rem;
 }
-
+/* heading of article */
 #resume .resume-head {
   font-size: 1rem;
 }
-
+/* subheading of article group*/
 #resume .resume-subhead {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
 }
-
+/* title of article */
 #resume .resume-title {
   flex: 0 auto;
   font-style: italic;
@@ -456,7 +464,7 @@ section p:not(#about p) {
   margin-left: 1rem;
   font-size: 0.9rem;
 }
-
+/* date of article */
 #resume .resume-date {
   flex: 1;
   font-style: italic;
@@ -464,23 +472,17 @@ section p:not(#about p) {
   padding: 0;
   margin-left: 1rem;
 }
-
+/* detail list for article */
 #resume .resume-detail {
   margin-left: 3rem;
   flex: 1;
   font-size: 0.9rem;
 }
-
+/* restyle lines */
 #resume li {
   list-style-type: circle;
   font-size: 0.9em;
   line-height: 1.3;
-}
-
-/* Phone text size smaller */
-#Phone p {
-  font-size: 0.9rem;
-  /* align-content: center; */
 }
 
 /* Footer - footer element*/
@@ -489,7 +491,6 @@ footer {
   width: 100%;
   text-align: center;
 }
-
 footer p {
   padding: 10px 0;
   font-size: small;
