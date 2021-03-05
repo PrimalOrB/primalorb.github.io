@@ -30,5 +30,6 @@ https://primalorb.github.io/
 - aria screen reader simulation drove many design and code changes to ensure the audio version of the site was easy to navigae
 - image alt desciptions
 - symantic HTML headings
+- [Silktide Toolbar](https://silktide.com/) utilized for accessibiltiy simulation
 
 ## ©️2021 Andrew Ogilvie
