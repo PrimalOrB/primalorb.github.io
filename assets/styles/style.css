@@ -339,7 +339,7 @@ section p:not(#about p) {
   font-size: 0.8rem;
 }
 
-/* test area which is hidden during initial state, and is faded in when hovering */
+/* text area which is hidden during initial state, and is faded in when hovering */
 #work li span {
   background-color: rgba(200, 200, 200, 00);
   color: rgba(200, 200, 200, 00);
@@ -349,8 +349,8 @@ section p:not(#about p) {
   width: 100%;
   height: 100%;
   z-index: 333;
-  padding: 40px 10%;
-  font-size: 0.8em;
+  padding: 5px 5%;
+  font-size: 0.7em;
   font-style: italic;
   transition: 1s ease;
   text-align: center;
@@ -581,30 +581,35 @@ footer p {
     text-align: right;
     padding-right: 30px;
   }
-  /* p element is an empty element to assist with flex alignment */
+    /* p element is an empty element to assist with flex alignment */
   .work-flex p {
     flex: 3;
   }
-  /* resize project elements */
+    /* resize project elements */
   #work li {
     height: 200px;
   }
-  /* resize first project element */
+    /* resize first project element */
   #work li:first-of-type {
     height: 400px;
   }
-  /* change text padding for project label text */
+    /* change text padding for project label text */
   #work li .project-label h3 {
     padding: 10px 20px 10px 15px;
     font-size: 1.2rem;
   }
-  /* change text size */
+    /* change text size */
   #work li .project-label div {
     font-size: 0.9rem;
   }
-  /* change max width for label expansion */
+    /* change max width for label expansion */
   #work li:hover .project-label div {
     width: 870px;
+  }
+    /* resize text for work article description */
+  #work li span {
+    padding: 20px 10%;
+    font-size: 0.9em;
   }
 
   /* Contact */
@@ -736,6 +741,13 @@ footer p {
   #work li:hover .project-label div {
     width: 870px;
   }
+    /* resize text for work article description */
+  #work li span {
+    padding: 40px 10%;
+    font-size: 0.8em;
+  }
+
+
 
   /* Contact - change layout to size by side articles */
   #contact aside {
