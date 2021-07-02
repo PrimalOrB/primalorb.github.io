@@ -1,3 +1,6 @@
+// derived from sample using react-three-fiber
+// https://bestofreactjs.com/repo/react-spring-react-three-fiber-react-react-integration
+
 import * as THREE from 'three'
 import React, { useRef, useMemo, useEffect } from 'react'
 import { extend, useThree, useFrame } from '@react-three/fiber'
@@ -6,7 +9,7 @@ import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass'
-import { WaterPass } from './post/Waterpass'
+import { WaterPass } from '../../post/Waterpass'
 
 extend({ EffectComposer, ShaderPass, RenderPass, WaterPass, UnrealBloomPass, FilmPass })
 

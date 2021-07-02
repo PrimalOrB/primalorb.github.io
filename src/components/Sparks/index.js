@@ -1,3 +1,6 @@
+// derived from sample using react-three-fiber
+// https://bestofreactjs.com/repo/react-spring-react-three-fiber-react-react-integration
+
 import * as THREE from 'three'
 import React, { useRef, useMemo } from 'react'
 import { extend, useFrame, useThree } from '@react-three/fiber'
