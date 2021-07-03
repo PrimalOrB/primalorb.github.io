@@ -61,6 +61,7 @@ const About = () => {
                 <LogoLink link="https://git-scm.com/">
                     <DiGit />
                 </LogoLink>
+                
             </LogoContainer>
         </MainContent>
     )
