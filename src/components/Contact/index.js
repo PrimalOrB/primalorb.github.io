@@ -4,7 +4,7 @@ import Subtitle from "../Subtitle"
 const Contact = () => {
     const title = 'contact me'
     return (
-        <MainContent className='main-content'>
+        <MainContent>
             <Subtitle title={ title }/>
         </MainContent>
     )

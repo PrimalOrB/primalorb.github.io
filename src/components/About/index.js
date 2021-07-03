@@ -1,5 +1,7 @@
 import MainContent from "../Main"
 import Subtitle from "../Subtitle"
+import ProfilePhoto from '../ProfilePhoto'
+import Section from "../Section"
 import LogoThree from '../Logo_Three'
 import LogoContainer from '../Logo_Container'
 import LogoLink from '../Logo_Link'
@@ -9,9 +11,16 @@ import { DiMongodb, DiJavascript1, DiJqueryLogo, DiGit, DiJqueryUiLogo } from 'r
 
 const About = () => {
     const title = 'about me'
+    const title2 = 'my technologies'
     return (
         <MainContent>
             <Subtitle title={ title }/>
+            <Section>
+                <div>Welcome to my portfolio and thank you for visiting. My name is Andrew Ogilvie and this is my platform to showcase the knowledge I have applied, and to make meaningful networking connections with my visitors.
+                Please visit my work examples, experience history, and find my contact information and professional connection methods.</div>
+                <ProfilePhoto />
+            </Section>
+            <Subtitle title={ title2 }/>
             <LogoContainer>
                 <LogoLink link="http://threejs.org">
                     <LogoThree />
@@ -27,6 +36,9 @@ const About = () => {
                 </LogoLink>
                 <LogoLink link="https://nodejs.org/en/">
                     <FaNodeJs />
+                </LogoLink>
+                <LogoLink link="https://en.wikipedia.org/wiki/CSS">
+                    <FaCss3Alt />
                 </LogoLink>
                 <LogoLink link="https://getbootstrap.com/">
                     <FaBootstrap />
