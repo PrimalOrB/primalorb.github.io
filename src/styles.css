@@ -4,6 +4,7 @@
   --white-full: rgba(255, 255, 255, 1);
   --white-fade-hard: rgba(255, 255, 255, 0.75);
   --white-fade-soft: rgba(255, 255, 255, 0.25);
+  --black-fade-soft: rgba(0, 0, 0, 0.25);
   --gray: rgba(180, 180, 180, 1);
   --gray-fade-hard: rgba(180, 180, 180, 0.75);
   --text-color: hsl(208, 38%, 35%, 1);
@@ -20,7 +21,7 @@
   font-family: Arial, Helvetica, sans-serif;
   color: var(--white-full);
   overflow: hidden;
-  /* border: 1px solid black; */
+  /* border: 1px solid gray; */
 }
 
 html {
@@ -49,12 +50,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  background-color: var(--white-fade-soft);
+  background-color: var(--black-fade-soft);
 }
 
 header {
-  padding: 0.75rem 0;
-  border-bottom: 3px white solid;
+  padding: 0.5rem 0;
+  border-bottom: 1px white solid;
 }
 
 footer {
@@ -74,6 +75,8 @@ footer p {
 .sub-wrapper {
   width: 100%;
   max-width: 1200px;
+  align-content: center;
+  flex-direction: column;
   display: flex;
   justify-content: space-between;
 }
@@ -87,22 +90,90 @@ footer p {
 
 .title {
   font-size: 2rem;
-  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 nav {
-  display: inline-block;
-  padding: 0.5rem;
+  padding: 0.5rem 0 0 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
 nav .nav-link {
-  margin: 0 0.5rem;
-  padding: 0.25rem;
+  margin: 0;
+  padding: 0.25rem 0.5rem 0.1rem 0.5rem;
   color: var(--white-fade-hard);
   transition: 0.25 ease-in-out all;
 }
 
+nav .nav-link:hover {
+  border-bottom: 2px solid var(--white-fade-hard);
+}
+
 nav .nav-active {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--white-full);
   color: var(--white-full);
 }
+
+.main-content {
+  background-color: var(--black-fade-soft);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--white-full);
+}
+
+.logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 0.25rem 0;
+  margin: 0.5rem 1rem;
+}
+
+.logo-link {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem 1rem;
+  transition: 0.25s ease-in-out;
+}
+
+svg:hover {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.5rem;
+}
+
+/* tablet size */
+@media screen and (min-width: 760px) {
+  .sub-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav .nav-link {
+    margin: 0 0.5rem;
+  }
+}
+
+/* desktop size */
+@media screen and (min-width: 980px) {
+} ;

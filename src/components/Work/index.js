@@ -1,10 +1,12 @@
-import { withRouter } from "react-router-dom"
+import MainContent from "../Main"
+import Subtitle from "../Subtitle"
 
 const Work = () => {
+    const title = 'my work'
     return (
-        <div className="work">
-            <span>Work</span>
-        </div>
+        <MainContent>
+            <Subtitle title={ title }/>
+        </MainContent>
     )
 }
 

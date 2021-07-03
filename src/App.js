@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import Background from './components/Background'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/Home';
 import About from './components/About';
 import Work from './components/Work';
 import Contact from './components/Contact';
@@ -15,7 +14,7 @@ function App() {
         'about', 'work', 'contact', 'resume'
     ] )
 
-    const [ currentPage, setCurrentPage ] = useState( undefined )
+    const [ currentPage, setCurrentPage ] = useState( allPages[0] )
 
     return (
         <div className="page">
@@ -24,7 +23,7 @@ function App() {
             <section className="content-wrapper">
                 <Switch>
                     <Route exact path="/"> 
-                        <Home />
+                        <About />
                     </Route>
                     <Route path="/about">
                         <About />

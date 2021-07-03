@@ -6,7 +6,7 @@ const Header = ( { currentPage, allPages, setCurrentPage } ) => {
     return (
         <header>
             <div className='sub-wrapper'>
-                <Title setCurrentPage={ setCurrentPage }/>
+                <Title />
                 <Nav currentPage={ currentPage } allPages={ allPages } setCurrentPage={ setCurrentPage } />
             </div>
         </header>

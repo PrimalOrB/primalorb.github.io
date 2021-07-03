@@ -1,8 +1,12 @@
+import MainContent from "../Main"
+import Subtitle from "../Subtitle"
+
 const Contact = () => {
+    const title = 'contact me'
     return (
-        <div className="contact">
-            <span>Contact</span>
-        </div>
+        <MainContent className='main-content'>
+            <Subtitle title={ title }/>
+        </MainContent>
     )
 }
 

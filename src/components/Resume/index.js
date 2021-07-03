@@ -1,8 +1,12 @@
+import MainContent from "../Main"
+import Subtitle from "../Subtitle"
+
 const Resume = () => {
+    const title = 'resume'
     return (
-        <div className="resume">
-            <span>Resume</span>
-        </div>
+        <MainContent>
+            <Subtitle title={ title }/>
+        </MainContent>
     )
 }
 
