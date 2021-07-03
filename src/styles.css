@@ -33,6 +33,10 @@ html {
   justify-content: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 .page {
   display: flex;
   flex-wrap: wrap;
@@ -45,7 +49,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--white-fade-soft);
 }
 
 header {
@@ -74,6 +78,13 @@ footer p {
   justify-content: space-between;
 }
 
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
 .title {
   font-size: 2rem;
   margin: 0 1rem;
@@ -84,7 +95,14 @@ nav {
   padding: 0.5rem;
 }
 
-nav span {
+nav .nav-link {
   margin: 0 0.5rem;
   padding: 0.25rem;
+  color: var(--white-fade-hard);
+  transition: 0.25 ease-in-out all;
+}
+
+nav .nav-active {
+  border-bottom: 2px solid white;
+  color: var(--white-full);
 }

@@ -1,12 +1,13 @@
 import Title from "../Title"
 import Nav from "../Nav"
 
-const Header = () => {
+const Header = ( { currentPage, allPages, setCurrentPage } ) => {
+
     return (
         <header>
             <div className='sub-wrapper'>
-                <Title />
-                <Nav />
+                <Title setCurrentPage={ setCurrentPage }/>
+                <Nav currentPage={ currentPage } allPages={ allPages } setCurrentPage={ setCurrentPage } />
             </div>
         </header>
     )

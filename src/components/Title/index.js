@@ -1,7 +1,12 @@
-const Title = () => {
+import { Link } from "react-router-dom"
+
+const Title = ( { setCurrentPage } ) => {
     return (
         <div className="title">
-            <span>Andrew Ogilvie</span>
+            <Link to='/' onClick={ () => {
+                    setCurrentPage( undefined )
+                } }>Andrew Ogilvie
+            </Link>
         </div>
     )
 }
