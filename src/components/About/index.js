@@ -4,6 +4,8 @@ import ProfilePhoto from '../ProfilePhoto'
 import Section from "../Section"
 import LogoThree from '../Logo_Three'
 import LogoMaya from '../Logo_Maya'
+import LogoHDBS from '../Logo_hdbs'
+import LogoEX from '../Logo_Express'
 import LogoContainer from '../Logo_Container'
 import LogoLink from '../Logo_Link'
 import { GrMysql } from 'react-icons/gr'
@@ -17,7 +19,7 @@ const About = () => {
     return (
         <MainContent>
             <Subtitle title={ title }/>
-            <Section>
+            <Section wrap="nowrap">
                 <div>Welcome to my portfolio and thank you for visiting. My name is Andrew Ogilvie and this is my platform to showcase the knowledge I have applied, and to make meaningful networking connections with my visitors.
                 Please visit my work examples, experience history, and find my contact information and professional connection methods.</div>
                 <ProfilePhoto />
@@ -32,6 +34,12 @@ const About = () => {
                 </LogoLink>
                 <LogoLink link="https://github.com/">
                     <FaGithub  />
+                </LogoLink>
+                <LogoLink link="https://expressjs.com/">
+                    <LogoEX />
+                </LogoLink>
+                <LogoLink link="https://handlebarsjs.com/">
+                    <LogoHDBS />
                 </LogoLink>
                 <LogoLink link="https://en.wikipedia.org/wiki/HTML5">
                     <FaHtml5 />

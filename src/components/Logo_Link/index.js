@@ -1,6 +1,6 @@
-const LogoLink = ( { children, link } ) => {
+const LogoLink = ( { children, link, addClass } ) => {
     return (
-        <a href={ link } target="_blank" className="logo-link">
+        <a href={ link } target="_blank" className={ `${ addClass ? addClass : 'logo-link' }` }>
             { children }
         </a>
     )

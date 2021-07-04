@@ -1,6 +1,6 @@
-const Section = ( { children } ) => {
+const Section = ( { children, wrap } ) => {
     return (
-        <section className="section-container">
+        <section className={ `section-container ${ wrap } `} >
             { children }
         </section>
     )

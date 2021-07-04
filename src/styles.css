@@ -7,9 +7,7 @@
   --black-fade-soft: rgba(0, 0, 0, 0.35);
   --gray: rgba(180, 180, 180, 1);
   --gray-fade-hard: rgba(180, 180, 180, 0.75);
-  --text-color: hsl(208, 38%, 35%, 1);
-  --text-color-alt: hsl(208, 38%, 25%, 1);
-  --text-color-fade: hsl(208, 38%, 35%, 0.6);
+  --gray-fade-soft: rgba(180, 180, 180, 0.25);
   --shadow: rgba(0, 0, 0, 0.2);
   font-size: 1.25rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -218,6 +216,124 @@ img {
     var(--black-fade-soft) 90%,
     rgba(198, 198, 198, 0) 100%
   );
+}
+
+.wrap {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.project-wrapper {
+  flex-basis: 48%;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 15rem;
+  background-color: var(--white-full);
+  border: 1px solid var(--white-full);
+  margin: 0.5rem 0.5rem;
+}
+
+.project-image {
+  width: 100%;
+  object-fit: cover;
+  z-index: -10;
+  transition: 0.25s ease-in-out;
+}
+
+.project-wrapper:hover .project-image {
+  filter: blur(1px) saturate(0.15) brightness(1.25);
+  opacity: 0.25;
+}
+
+.project-title {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  background-color: black;
+  padding: 0.25rem 1.5rem;
+  font-size: 1.2rem;
+  transition: 0.25s ease-in-out;
+  z-index: 50;
+  border-radius: 0 0.5rem 0.5rem 0;
+  border-top: 1px solid var(--white-full);
+  border-right: 1px solid var(--white-full);
+  border-bottom: 1px solid var(--white-full);
+}
+
+.project-wrapper:hover .project-title {
+  transform: translateY(-1.1rem);
+  border-radius: 0 0 0.5rem 0;
+}
+
+.project-tech {
+  position: absolute;
+  z-index: 50;
+  right: -2.5rem;
+  top: 0;
+  height: 100%;
+  width: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: 0.25s ease-in-out;
+  border-left: 1px solid gray;
+  background-color: var(--gray-fade-soft);
+  opacity: 0;
+}
+
+.project-wrapper:hover .project-tech {
+  transform: translateX(-2.5rem);
+  border-radius: 0 0 0.5rem 0;
+  opacity: 1;
+}
+
+.project-tech svg:not(.custom) {
+  fill: black;
+}
+
+.project-tech .custom g {
+  stroke: black;
+}
+
+.project-desc {
+  position: absolute;
+  top: 0rem;
+  width: calc(100% - 3rem);
+  padding: 0.5rem;
+  color: black;
+  opacity: 0;
+  transition: 0.25s ease-in-out;
+  text-align: center;
+  z-index: 50;
+}
+
+.project-wrapper:hover .project-desc {
+  transform: translateY(2rem);
+  opacity: 1;
+}
+
+/* .project-link {
+  width: 100%;
+  height: 100%;
+} */
+
+.project-links {
+  position: absolute;
+  opacity: 0;
+  transition: 0.25s ease-in-out;
+  left: 0.5rem;
+  bottom: -1.5rem;
+  z-index: 50;
+}
+
+.project-wrapper:hover .project-links {
+  transform: translateY(-2rem);
+  opacity: 1;
 }
 
 .contact-links {
