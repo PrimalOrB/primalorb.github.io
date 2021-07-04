@@ -16,10 +16,10 @@ const Project = ( { title, description, url, image, technologies, github } ) => 
             </div>
             <span className="project-desc">{ description }</span>
             <div className="project-links">
-                <LogoLink link={ url } key={ title } addClass="project-link-icon">
+                <LogoLink link={ url } key={ `${title}${url}` } addClass="project-link-icon">
                     <FaLink fill="#000" />
                 </LogoLink>
-                <LogoLink link={ github } key={ title } addClass="project-link-icon">
+                <LogoLink link={ github } key={ `${title}${github}` } addClass="project-link-icon">
                     <FaGithub fill="#000" />
                 </LogoLink>
             </div>

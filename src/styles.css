@@ -38,6 +38,7 @@ a {
 
 .page {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -53,7 +54,7 @@ a {
 
 header,
 footer {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: baseline;
