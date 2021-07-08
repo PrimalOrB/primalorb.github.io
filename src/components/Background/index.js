@@ -17,7 +17,7 @@ const Background = () => {
         className="background"
         style={{position:'fixed', top:0, right:0, left: 0, bottom: 0, zIndex:'-999'}}
         linear
-        dpr={ [1, 2] }
+        dpr={ [1, 1] }
         camera={ { fov: 70, position: [ 0, 0, 30 ] } }
         onCreated={ ( { gl } ) => {
             gl.toneMapping = THREE.ReinhardToneMapping
