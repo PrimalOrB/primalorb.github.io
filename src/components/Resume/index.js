@@ -1,8 +1,12 @@
 import MainContent from "../Main"
 import Subtitle from "../Subtitle"
 import ResumePrimary from '../Resume_Primary'
-import ResumeTask from '../Resume_Task'
 import Section from "../Section"
+// import generatePDF from "../Resume_PDF"
+// import { renderToString } from "react-dom/server";
+// import Prints from '../Resume_PDF'
+// import { jsPDF } from 'jspdf'
+
 
 const Resume = () => {
     const title = 'resume'
@@ -95,10 +99,35 @@ const Resume = () => {
         }
     ] 
  
+    const print = () => {
+        const string = <Prints />;
+        // console.log( string )
+        const pdf = new jsPDF("p", "mm", "a4");
+        const columns = [
+          "SOW Creation Date",
+          "SOW Start Date",
+          "Project",
+          "Last Updated",
+          "SOW End Date"
+        ];
+        var rows = [
+          [
+            "Dec 13, 2017",
+            "Jan 1, 2018",
+            "ABC Connect - ABCXYZ",
+            "Dec 13, 2017",
+            "Dec 31, 2018"
+          ]
+        ];
+        pdf.fromHTML( string );
+        pdf.save("pdf");
+      };
 
     return (
         <MainContent>
             <Subtitle title={ title }/>
+            {/* <button onClick={ generatePDF } type="primary">Download PDF</button>  */}
+            {/* <button onClick={print}>print</button> */}
             <Section wrap="wrap">
                 <ResumePrimary title="Employment" data={ employment } />
                 <ResumePrimary title="Education" data={ education } />

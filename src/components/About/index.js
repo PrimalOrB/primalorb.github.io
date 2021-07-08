@@ -11,7 +11,7 @@ import LogoLink from '../Logo_Link'
 import { GrMysql } from 'react-icons/gr'
 import { FaGithub, FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaBootstrap } from 'react-icons/fa'
 import { DiMongodb, DiJavascript1, DiJqueryLogo, DiGit, DiJqueryUiLogo } from 'react-icons/di'
-import { SiAdobephotoshop, SiAdobeillustrator, SiAdobeaftereffects, SiAdobepremiere, SiMicrosoftexcel } from 'react-icons/si'
+import { SiAdobephotoshop, SiAdobeillustrator, SiAdobeaftereffects, SiAdobepremiere, SiMicrosoftexcel, SiGraphql } from 'react-icons/si'
 
 const About = () => {
     const title = 'about me'
@@ -31,6 +31,9 @@ const About = () => {
                 </LogoLink>
                 <LogoLink link="https://reactjs.org/">
                     <FaReact />
+                </LogoLink>
+                <LogoLink link="https://graphql.org/">
+                    <SiGraphql />
                 </LogoLink>
                 <LogoLink link="https://github.com/">
                     <FaGithub  />
@@ -85,9 +88,6 @@ const About = () => {
                 </LogoLink>
                 <LogoLink link="https://www.autodesk.com/products/maya/overview">
                     <LogoMaya />
-                </LogoLink>
-                <LogoLink link="https://www.microsoft.com/en-ca/microsoft-365/excel">
-                    <SiMicrosoftexcel />
                 </LogoLink>
                 
             </LogoContainer>

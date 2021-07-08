@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom';
 import Background from './components/Background'
 import Header from './components/Header';
@@ -7,6 +7,7 @@ import About from './components/About';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Resume from './components/Resume';
+import { capitalizeFirstLetter } from "./utils/helpers";
 
 function App() {
 
@@ -15,6 +16,10 @@ function App() {
     ] )
 
     const [ currentPage, setCurrentPage ] = useState( allPages[0] )
+
+    useEffect( () => {
+        document.title = `Andrew Ogilvie - ${ capitalizeFirstLetter( currentPage ) }`
+    }, [ currentPage ] )
 
     return (
         <div className="page">
