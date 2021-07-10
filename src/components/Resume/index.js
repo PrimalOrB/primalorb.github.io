@@ -2,10 +2,7 @@ import MainContent from "../Main"
 import Subtitle from "../Subtitle"
 import ResumePrimary from '../Resume_Primary'
 import Section from "../Section"
-// import generatePDF from "../Resume_PDF"
-// import { renderToString } from "react-dom/server";
-// import Prints from '../Resume_PDF'
-// import { jsPDF } from 'jspdf'
+import { jsPDF } from 'jspdf'
 
 
 const Resume = () => {
@@ -91,6 +88,7 @@ const Resume = () => {
                         'Digital Photography / Videography',
                         '3D Modeling and Animation',
                         'Soccer',
+                        
                         'Automobiles & Driving',
                         'Continued Learning',
                     ]
@@ -100,34 +98,88 @@ const Resume = () => {
     ] 
  
     const print = () => {
-        const string = <Prints />;
-        // console.log( string )
         const pdf = new jsPDF("p", "mm", "a4");
-        const columns = [
-          "SOW Creation Date",
-          "SOW Start Date",
-          "Project",
-          "Last Updated",
-          "SOW End Date"
-        ];
-        var rows = [
-          [
-            "Dec 13, 2017",
-            "Jan 1, 2018",
-            "ABC Connect - ABCXYZ",
-            "Dec 13, 2017",
-            "Dec 31, 2018"
-          ]
-        ];
-        pdf.fromHTML( string );
-        pdf.save("pdf");
-      };
+        const header = {
+            name: 'Andrew Ogilvie',
+            address1: '1162 Barr Cres',
+            address2: 'Milton ON L9T 6X8',
+            phone: '(416) 845-6942',
+            email: 'primalorb@gmail.com'
+        }
+        const data = [ 
+            {
+                title: "Employment",
+                dataset: employment
+            },
+            {
+                title: "Education",
+                dataset: education
+            },
+            {
+                title: "Interests",
+                dataset: interests
+            },
+        ]
+        let yPos = 10
+        let size = 18
+        pdf.setFontSize( size );
+        pdf.setFont("helvetica", "bold");
+        pdf.text( header.name, 105, yPos, null, null, "center")
+        size = 10
+        pdf.setFontSize( size );
+        yPos += size * 0.45
+        pdf.setFont("helvetica", "normal");
+        pdf.text( header.address1, 105, yPos, null, null, "center")
+        yPos += size * 0.45
+        pdf.text( header.address2, 105, yPos, null, null, "center")
+        yPos += size * 0.45
+        pdf.text( header.phone, 105, yPos, null, null, "center")
+        yPos += size * 0.45
+        pdf.text( header.email, 105, yPos, null, null, "center")
+        yPos += size * 0.45
+        data.map( a => {
+            size = 18
+            yPos += size * 0.65
+            pdf.setFontSize( size );
+            pdf.setFont("helvetica", "normal");
+            pdf.text( a.title, 18, yPos );
+            a.dataset.map( ( x ) => {
+                size = 14
+                yPos += size * 0.55
+                pdf.setFontSize( size );
+                pdf.text(x.primary, 25, yPos );
+                x.roles.map( ( y ) => {
+                    if( y.role !== undefined ){
+                        size = 10
+                        yPos += size * 0.55
+                        pdf.setFontSize( size );
+                        pdf.setFont("helvetica", "italic");
+                        pdf.text(`( ${ y.from } - ${ y.to } )`, 30, yPos );
+                        pdf.setFont("helvetica", "bold");
+                        pdf.text( y.role, 58, yPos );
+                    }
+                    y.tasks.map( ( z ) => {
+                        size = 9
+                        yPos += size * 0.55
+                        pdf.setFont("helvetica", "normal");
+                        pdf.setFontSize( size );
+                        pdf.text( `• ${z}`, 62, yPos );
+                    } )
+                } )
+            } )
+        })
+        size = 9
+        pdf.setFontSize( size );
+        pdf.setFont("helvetica", "italic");
+        let date = new Date().toLocaleString()
+        pdf.text( `* This document is dynamically generated: ${date}`, 200, 280, null, null, "right")
+        pdf.save(`${ header.name.toLowerCase().split(' ')[0][0] }-${ header.name.toLowerCase().split(' ')[1] }-resume.pdf`);
+    };
 
     return (
         <MainContent>
             <Subtitle title={ title }/>
-            {/* <button onClick={ generatePDF } type="primary">Download PDF</button>  */}
-            {/* <button onClick={print}>print</button> */}
+            <button onClick={ print }>print</button>
             <Section wrap="wrap">
                 <ResumePrimary title="Employment" data={ employment } />
                 <ResumePrimary title="Education" data={ education } />
