@@ -3,7 +3,8 @@ import Subtitle from "../Subtitle"
 import ResumePrimary from '../Resume_Primary'
 import Section from "../Section"
 import { jsPDF } from 'jspdf'
-
+FaFileDownload
+import { FaFileDownload } from 'react-icons/fa'
 
 const Resume = () => {
     const title = 'resume'
@@ -179,12 +180,12 @@ const Resume = () => {
     return (
         <MainContent>
             <Subtitle title={ title }/>
-            <button onClick={ print }>print</button>
             <Section wrap="wrap">
                 <ResumePrimary title="Employment" data={ employment } />
                 <ResumePrimary title="Education" data={ education } />
                 <ResumePrimary title="Interests" data={ interests } />
             </Section>
+            <button onClick={ print } className="resume-button"><FaFileDownload />Download PDF</button>
         </MainContent>
     )
 }
