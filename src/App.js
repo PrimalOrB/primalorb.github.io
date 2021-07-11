@@ -28,21 +28,12 @@ function App() {
                 <Header currentPage={ currentPage } allPages={ allPages } setCurrentPage={ setCurrentPage }/>
                 <section className="content-wrapper">
                     <Switch>
-                        <Route exact path="/"> 
-                            <About />
-                        </Route>
-                        <Route exact path="/about">
-                            <About />
-                        </Route>
-                        <Route exact path="/work">
-                            <Work />
-                        </Route>
-                        <Route exact path="/contact">
-                            <Contact />
-                        </Route>
-                        <Route exact path="/resume">
-                            <Resume />
-                        </Route>
+                        <Route exact path="/" component={About}/> 
+                        <Route exact path="/about" component={About}/>
+                        <Route exact path="/work" component={Work}/>
+                        <Route exact path="/contact" component={Contact}/>
+                        <Route exact path="/resume" component={Resume}/>
+                        <Route component={About} />
                     </Switch>
                 </section>
                 <Footer />
