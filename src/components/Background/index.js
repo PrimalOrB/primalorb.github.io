@@ -29,6 +29,10 @@ const Background = () => {
         <Sparks count={ 15 } mouse={ mouse } colors={ [ '#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff', 'lightpink', 'lightblue' ] } />
         <Effects />
     </Canvas>
+    // <Canvas className="background"
+    //     style={{position:'fixed', top:0, right:0, left: 0, bottom: 0, zIndex:'-999', backgroundColor:"#020207"}}
+      
+    //   />
     )
 }
 

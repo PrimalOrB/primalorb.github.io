@@ -2,11 +2,12 @@ import { Link } from "react-router-dom"
 
 const Nav = ( { currentPage, allPages, setCurrentPage } ) => {
     return (
-        <nav role="nav">
+        <nav aria-label="Navigation Menu" role="menubar">
             { allPages.map( ( page ) => ( 
             <Link 
                 to={ `/${ page }` }
-                className= { `nav-link ${ currentPage === page ? `nav-active` : undefined }`  }
+                className= { `nav-link${ currentPage === page ? ` nav-active` : "" }`  }
+                role="menuitem" 
                 key={ page }
                 onClick={ () => {
                     setCurrentPage( page )

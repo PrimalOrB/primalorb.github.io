@@ -25,7 +25,7 @@ const Work = () => {
             { key:4, name: 'bcrypt', icon: BsLock , url: 'https://www.npmjs.com/package/bcrypt' },
         ] },
 
-        { title: 'Gamer Match', url: 'https://damp-tor-80298.herokuapp.com/', image: 'gamermatch.PNG', description: 'A collarboratively developed application. Gamers can use their steam credentials to log in and find other players who interact with similar games. Developed using Node.js, handlebars.js, sequelize.js, and threejs', github: 'https://github.com/PrimalOrB/gamer-match', technologies:[
+        { title: 'Gamer Match', url: 'https://damp-tor-80298.herokuapp.com/', image: 'gamermatch-min.PNG', description: 'A collaboratively developed application. Gamers can use their steam credentials to log in and find other players who interact with similar games. Developed using Node.js, handlebars.js, sequelize.js, and threejs', github: 'https://github.com/PrimalOrB/gamer-match', technologies:[
             { key:1, name: 'Node.js', icon: FaNodeJs, url: 'https://nodejs.org/en/' },
             { key:2, name: 'mySQL', icon: GrMysql , url: 'https://www.mysql.com/' },
             { key:3, name: 'express', icon: LogoEX , url: 'https://expressjs.com/' },
@@ -33,7 +33,7 @@ const Work = () => {
             { key:5, name: 'threejs', icon: LogoThree , url: 'http://threejs.org/' },
         ] },
         
-        { title: 'Weather App', url: 'https://primalorb.github.io/weather_dashboard/', image: 'weather.PNG', description: 'A weather app utilizing the OpenWeather API to serve location specific weather data to the user. Forecase data is clearly visualized for the user, and previous location searches are stored for retrieval', github: 'https://github.com/PrimalOrB/weather_dashboard', technologies:[
+        { title: 'Weather App', url: 'https://primalorb.github.io/weather_dashboard/', image: 'weather-min.PNG', description: 'A weather app utilizing the OpenWeather API to serve location specific weather data to the user. Forecase data is clearly visualized for the user, and previous location searches are stored for retrieval', github: 'https://github.com/PrimalOrB/weather_dashboard', technologies:[
             { key:1, name: 'jQuery', icon: DiJqueryLogo, url: 'https://jquery.com/' },
             { key:2, name: 'JavaScript', icon: DiJavascript1 , url: 'https://en.wikipedia.org/wiki/JavaScript' },
             { key:3, name: 'css', icon: FaCss3Alt , url: 'https://en.wikipedia.org/wiki/CSS' },
@@ -41,7 +41,7 @@ const Work = () => {
             { key:5, name: 'jQueryui', icon: DiJqueryUiLogo , url: 'https://jqueryui.com/' },
         ] },
 
-        { title: 'Drinkspo', url: 'https://primalorb.github.io/find_your_drink/', image: 'drinkspo.PNG', description: 'Collarborative front-end project where users can find drink ideas and fun trivia to go along with it. Users can generate scheduled events / reminders so they can send emails to share with their friends.', github: 'https://github.com/PrimalOrB/find_your_drink', technologies:[
+        { title: 'Drinkspo', url: 'https://primalorb.github.io/find_your_drink/', image: 'drinkspo-min.PNG', description: 'Collaborative front-end project where users can find drink ideas and fun trivia to go along with it. Users can generate scheduled events / reminders so they can send emails to share with their friends.', github: 'https://github.com/PrimalOrB/find_your_drink', technologies:[
             { key:1, name: 'jQuery', icon: DiJqueryLogo, url: 'https://jquery.com/' },
             { key:2, name: 'JavaScript', icon: DiJavascript1 , url: 'https://en.wikipedia.org/wiki/JavaScript' },
             { key:3, name: 'css', icon: FaCss3Alt , url: 'https://en.wikipedia.org/wiki/CSS' },
@@ -49,7 +49,7 @@ const Work = () => {
             { key:5, name: 'jQueryui', icon: DiJqueryUiLogo , url: 'https://jqueryui.com/' },
         ] },
 
-        { title: 'Open Quiz Game', url: 'https://primalorb.github.io/open_quiz/', image: 'code_quiz.png', description: 'A quiz game where the user can define the questions and answwers, as well as the difficulty of the game by adjusting time settings. High scores are kept in local storage.', github: 'https://github.com/PrimalOrB/open_quiz', technologies:[
+        { title: 'Open Quiz Game', url: 'https://primalorb.github.io/open_quiz/', image: 'code_quiz-min.png', description: 'A quiz game where the user can define the questions and answwers, as well as the difficulty of the game by adjusting time settings. High scores are kept in local storage.', github: 'https://github.com/PrimalOrB/open_quiz', technologies:[
             { key:1, name: 'jQuery', icon: DiJqueryLogo, url: 'https://jquery.com/' },
             { key:2, name: 'JavaScript', icon: DiJavascript1 , url: 'https://en.wikipedia.org/wiki/JavaScript' },
             { key:3, name: 'css', icon: FaCss3Alt , url: 'https://en.wikipedia.org/wiki/CSS' },
@@ -57,7 +57,7 @@ const Work = () => {
             { key:5, name: 'html', icon: FaHtml5 , url: 'https://en.wikipedia.org/wiki/HTML5' },
         ] },
 
-        { title: 'Password Generator', url: 'https://primalorb.github.io/password_generator/', image: 'password-generator.png', description: 'JavaScript password generator allowing a user to define the included types of characters used.', github: 'https://github.com/PrimalOrB/password_generator', technologies:[
+        { title: 'Password Generator', url: 'https://primalorb.github.io/password_generator/', image: 'password-generator-min.png', description: 'JavaScript password generator allowing a user to define the included types of characters used.', github: 'https://github.com/PrimalOrB/password_generator', technologies:[
             { key:1, name: 'JavaScript', icon: DiJavascript1 , url: 'https://en.wikipedia.org/wiki/JavaScript' },
             { key:2, name: 'html', icon: FaHtml5 , url: 'https://en.wikipedia.org/wiki/HTML5' },
         ] },        

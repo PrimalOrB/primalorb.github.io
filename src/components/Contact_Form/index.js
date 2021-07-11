@@ -38,28 +38,27 @@ function ContactForm() {
 
     return (
         <section id="contact-form-cont">
-            <form id="contact-form" onSubmit={ handleSubmit }>
+            <form id="contact-form" onSubmit={ handleSubmit } role="none"a ria-hidden="true">
                 <div>
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" name="name" defaultValue={ name } onBlur={ handleChange } />
+                    <label htmlFor="name" role="none" aria-hidden="true">Name:</label>
+                    <input type="text" name="name" defaultValue={ name } onBlur={ handleChange } aria-label="name input"/>
                 </div>
                 <div>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" defaultValue={ email } onBlur={ handleChange } />
+                    <label htmlFor="email" role="none" aria-hidden="true">Email:</label>
+                    <input type="email" name="email" defaultValue={ email } onBlur={ handleChange } aria-label="email input" />
                 </div>
                 <div>
-                    <label htmlFor="message">Message:</label>
-                    <textarea name="message" rows="5" defaultValue={ message } onBlur={ handleChange }  />
+                    <label htmlFor="message" role="none" aria-hidden="true">Message:</label>
+                    <textarea name="message" rows="5" defaultValue={ message } onBlur={ handleChange } aria-label="message input"  />
                 </div>
             </form>
             {errorMessage ? (
-                <div className="error-text-div">
+                <div className="error-text-div" role="alert" aria-relevant="all">
                     <p className="error-text">{errorMessage}</p>
                 </div>
                 ) : (
                     <div className="error-text-div">
                         <button type="submit" id="contact-submit" data-testid="contact-submit">Submit</button>
-                    {/* <p className="error-text"></p> */}
                 </div>
                 )}
         </section>

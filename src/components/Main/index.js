@@ -1,8 +1,8 @@
 const MainContent = ( { children } ) => {
     return (
-        <section className="main-content">
+        <main className="main-content" aria-label="main">
             { children }
-        </section>
+        </main>
     )
 }
 
