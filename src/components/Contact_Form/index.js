@@ -38,7 +38,7 @@ function ContactForm() {
 
     return (
         <section id="contact-form-cont">
-            <form id="contact-form" onSubmit={ handleSubmit } role="none"a ria-hidden="true">
+            <form id="contact-form" onSubmit={ handleSubmit } role="none" aria-hidden="true">
                 <div>
                     <label htmlFor="name" role="none" aria-hidden="true">Name:</label>
                     <input type="text" name="name" defaultValue={ name } onBlur={ handleChange } aria-label="name input"/>
