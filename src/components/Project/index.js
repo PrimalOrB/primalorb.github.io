@@ -4,7 +4,7 @@ import LogoLink from '../Logo_Link'
 const Project = ( { title, description, url, image, miniImage, technologies, github } ) => {
 
     return (
-        <article className="project-wrapper" aria-lable={ title }>
+        <article className="project-wrapper" aria-label={ title }>
             <span className="project-title">{ title }</span>
             <div className="project-tech">
             { technologies.map( ( x ) => (
