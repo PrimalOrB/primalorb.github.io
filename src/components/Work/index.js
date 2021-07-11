@@ -5,7 +5,7 @@ import Project from "../Project"
 import LogoEX from "../Logo_Express"
 import LogoThree from '../Logo_Three'
 import LogoHDBS from '../Logo_hdbs'
-import { FaNodeJs, FaCss3Alt, FaRegClock, FaHtml5 } from 'react-icons/fa'
+import { FaNodeJs, FaCss3Alt, FaRegClock, FaHtml5, FaReact } from 'react-icons/fa'
 import { BsLock } from 'react-icons/bs'
 import { DiJqueryLogo, DiJavascript1, DiJqueryUiLogo } from 'react-icons/di'
 
@@ -17,6 +17,13 @@ const Work = () => {
     const title = 'my work'
 
     const projects = [
+        { title: 'Portfolio', url: 'https://primalorb.github.io/', image: 'portfolio-min.png', description: 'Single Page Application (SPA) React website to showcase my skills, projects, and contact methods', github: 'https://github.com/PrimalOrB/primalorb.github.io', technologies:[
+            { key:1, name: 'React', icon: FaReact, url: 'https://reactjs.org/' },
+            { key:4, name: 'threejs fiber', icon: LogoThree , url: 'http://threejs.org/' },
+            { key:2, name: 'JavaScript', icon: DiJavascript1 , url: 'https://en.wikipedia.org/wiki/JavaScript' },
+            { key:3, name: 'css', icon: FaCss3Alt , url: 'https://en.wikipedia.org/wiki/CSS' },
+        ] },
+
         { title: 'Tech Blog', url: 'https://primalorb-tech-blog.herokuapp.com/', image: 'tech.gif', description: 'A blog site utilizing Node.js, express.js, and mySQL allowing users to create accounts, create posts, and comment on the posts of other users. Deployed on Heroku, and using threejs for an interactive background.', github: 'https://github.com/PrimalOrB/tech_blog', technologies:[
             { key:1, name: 'Node.js', icon: FaNodeJs , url: 'https://nodejs.org/en/' },
             { key:2, name: 'mySQL', icon: GrMysql , url: 'https://www.mysql.com/' },
@@ -56,11 +63,7 @@ const Work = () => {
             { key:4, name: 'jQueryui', icon: DiJqueryUiLogo , url: 'https://jqueryui.com/' },
             { key:5, name: 'html', icon: FaHtml5 , url: 'https://en.wikipedia.org/wiki/HTML5' },
         ] },
-
-        { title: 'Password Generator', url: 'https://primalorb.github.io/password_generator/', image: 'password-generator-min.png', description: 'JavaScript password generator allowing a user to define the included types of characters used.', github: 'https://github.com/PrimalOrB/password_generator', technologies:[
-            { key:1, name: 'JavaScript', icon: DiJavascript1 , url: 'https://en.wikipedia.org/wiki/JavaScript' },
-            { key:2, name: 'html', icon: FaHtml5 , url: 'https://en.wikipedia.org/wiki/HTML5' },
-        ] },        
+     
     ]
 
 
