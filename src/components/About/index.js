@@ -20,7 +20,7 @@ const About = () => {
         <MainContent>
             <Subtitle title={ title }/>
             <Section wrap="nowrap">
-                <div>Welcome to my portfolio and thank you for visiting. My ariaLabel is Andrew Ogilvie and this is my platform to showcase the knowledge I have applied, and to make meaningful networking connections with my visitors.
+                <div>Welcome to my portfolio and thank you for visiting. My name is Andrew Ogilvie and this is my platform to showcase the knowledge I have applied, and to make meaningful networking connections with my visitors.
                 Please visit my work examples, experience history, and find my contact information and professional connection methods.</div>
                 <ProfilePhoto />
             </Section>
