@@ -31,16 +31,16 @@ function App() {
                         <Route exact path="/"> 
                             <About />
                         </Route>
-                        <Route path="/about">
+                        <Route exact path="/about">
                             <About />
                         </Route>
-                        <Route path="/work">
+                        <Route exact path="/work">
                             <Work />
                         </Route>
-                        <Route path="/contact">
+                        <Route exact path="/contact">
                             <Contact />
                         </Route>
-                        <Route path="/resume">
+                        <Route exact path="/resume">
                             <Resume />
                         </Route>
                     </Switch>
