@@ -49,7 +49,7 @@ const Resume = () => {
                 tasks: [
                     'MERN Full Stack Development',
                     'Front End: React, Handlebars, HTML, CSS, JavaScript',
-                    'Back End: Express, Node, mySQL, MongoDB',
+                    'Back End: GraphQL, Express, Node, mySQL, MongoDB',
                     'Other: jQuery, Bootstrap, Heroku, GitHub / Git'
                     ]
                 }
