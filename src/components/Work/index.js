@@ -7,7 +7,7 @@ import LogoThree from '../Logo_Three'
 import LogoHDBS from '../Logo_hdbs'
 import { FaNodeJs, FaCss3Alt, FaRegClock, FaHtml5, FaReact } from 'react-icons/fa'
 import { BsLock } from 'react-icons/bs'
-import { DiJqueryLogo, DiJavascript1, DiJqueryUiLogo } from 'react-icons/di'
+import { DiJqueryLogo, DiJavascript1, DiJqueryUiLogo, DiMongodb } from 'react-icons/di'
 
 
 import ProjectContainer from "../Project_Container"
@@ -17,6 +17,13 @@ const Work = () => {
     const title = 'my work'
 
     const projects = [
+        { title: 'myBid', url: 'https://mybid-live.herokuapp.com/', image: 'auction.PNG', description: 'A collaboratively developed MERN SPA auction platform with social features allowing anyone to create and bid on auctions.', github: 'https://github.com/PrimalOrB/myBid', technologies:[
+            { key:1, name: 'MongoDB', icon: DiMongodb, url: 'https://www.mongodb.com/' },
+            { key:2, name: 'express', icon: LogoEX , url: 'https://expressjs.com/' },
+            { key:3, name: 'React', icon: FaReact, url: 'https://reactjs.org/' },
+            { key:4, name: 'Node.js', icon: FaNodeJs , url: 'https://nodejs.org/en/' },
+        ] },
+
         { title: 'Portfolio', url: 'https://primalorb.github.io/', image: 'portfolio-min.png', description: 'Single Page Application (SPA) React website to showcase my skills, projects, and contact methods', github: 'https://github.com/PrimalOrB/primalorb.github.io', technologies:[
             { key:1, name: 'React', icon: FaReact, url: 'https://reactjs.org/' },
             { key:4, name: 'threejs fiber', icon: LogoThree , url: 'http://threejs.org/' },
@@ -54,16 +61,7 @@ const Work = () => {
             { key:3, name: 'css', icon: FaCss3Alt , url: 'https://en.wikipedia.org/wiki/CSS' },
             { key:4, name: 'moment', icon: FaRegClock , url: 'https://momentjs.com/' },
             { key:5, name: 'jQueryui', icon: DiJqueryUiLogo , url: 'https://jqueryui.com/' },
-        ] },
-
-        { title: 'Open Quiz Game', url: 'https://primalorb.github.io/open_quiz/', image: 'code_quiz-min.png', description: 'A quiz game where the user can define the questions and answwers, as well as the difficulty of the game by adjusting time settings. High scores are kept in local storage.', github: 'https://github.com/PrimalOrB/open_quiz', technologies:[
-            { key:1, name: 'jQuery', icon: DiJqueryLogo, url: 'https://jquery.com/' },
-            { key:2, name: 'JavaScript', icon: DiJavascript1 , url: 'https://en.wikipedia.org/wiki/JavaScript' },
-            { key:3, name: 'css', icon: FaCss3Alt , url: 'https://en.wikipedia.org/wiki/CSS' },
-            { key:4, name: 'jQueryui', icon: DiJqueryUiLogo , url: 'https://jqueryui.com/' },
-            { key:5, name: 'html', icon: FaHtml5 , url: 'https://en.wikipedia.org/wiki/HTML5' },
-        ] },
-     
+        ] },    
     ]
 
 
