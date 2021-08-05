@@ -20,7 +20,7 @@ const Resume = () => {
                     'Design & develop applications to simplify engineering processes',
                     'Interactive engineered product design applications',
                     'Work collaboratively with senior developers',
-                    'JavaScript, HTML, CSS, GitHub',
+                    'JavaScript, ThreeJS, MakerJS, HTML, CSS, GitHub',
                     ]
                 },
                 {
