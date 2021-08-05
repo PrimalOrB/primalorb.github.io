@@ -43,9 +43,9 @@ const Resume = () => {
         { primary: 'University of Toronto: SCS',
             roles: [ 
                 {
-                role: 'Full Stack Coding Bootcamp',
+                role: 'Full Stack Coding Bootcamp (98% avg)',
                 from: '2021',
-                to: 'Present',
+                to: '2021',
                 tasks: [
                     'MERN Full Stack Development',
                     'Front End: React, Handlebars, HTML, CSS, JavaScript',
